@@ -9,9 +9,8 @@ const LandingPage: NextPage = () => {
         <meta name="home" content="portfolio site for augericke" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p>gm world</p>
-      <h1 className="text-3xl">
-        Hello world!
+      <h1 className="text-3xl font-bold underline">
+        gm world
       </h1>
     </div>
   );
