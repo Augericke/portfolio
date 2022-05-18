@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+}  body {
+    @apply bg-black;
+  }
+
+@layer components {
+  .top-navigation-icon {
+    @apply dark:text-white
+    mr-3 ml-4
+    transition duration-300 ease-in-out
+    cursor-pointer;
+  }
+}

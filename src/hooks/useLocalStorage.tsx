@@ -15,6 +15,7 @@ const useLocalStorage = (key: string, initialValue: any) => {
   };
 
   // Render initially on client
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setStoredValue(initState(key)), []);
 
   // Wrap useState set function to persist in localStorage

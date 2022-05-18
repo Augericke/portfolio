@@ -1,9 +1,11 @@
 import type { NextPage } from 'next';
-import useLocalStorage from '../hooks/useLocalStorage';
 import Head from 'next/head';
+import useDarkMode from '../hooks/useDarkMode';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const LandingPage: NextPage = () => {
-  const [test, setTest] = useLocalStorage('test-theme', '');
+  const [darkTheme, setDarkTheme] = useDarkMode();
+  const handleDarkModeToggle = () => setDarkTheme(!darkTheme);
 
   return (
     <div>
@@ -12,17 +14,13 @@ const LandingPage: NextPage = () => {
         <meta name="home" content="portfolio site for augericke" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="text-3xl font-bold underline">
-        {test}
-      </h1>
-      <button
-        onClick={() => {
-          setTest(!test);
-          console.log(window.localStorage);
-        }}
-      >
-        test
-      </button>
+      <span onClick={handleDarkModeToggle}>
+        {darkTheme ? (
+          <FaSun size='24' className='top-navigation-icon' />
+        ) : (
+          <FaMoon size='24' className='top-navigation-icon' />
+        )}
+      </span>
     </div>
   );
 };

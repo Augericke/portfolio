@@ -10,13 +10,14 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <div className='bg-white dark:bg-black h-screen
+                    transition duration-300'>
       <NavBar />
       <main>
         {React.cloneElement(children)}
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
