@@ -1,7 +1,10 @@
 import type { NextPage } from 'next';
+import useLocalStorage from '../hooks/useLocalStorage';
 import Head from 'next/head';
 
 const LandingPage: NextPage = () => {
+  const [test, setTest] = useLocalStorage('test-theme', '');
+
   return (
     <div>
       <Head>
@@ -10,8 +13,16 @@ const LandingPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="text-3xl font-bold underline">
-        gm world
+        {test}
       </h1>
+      <button
+        onClick={() => {
+          setTest(!test);
+          console.log(window.localStorage);
+        }}
+      >
+        test
+      </button>
     </div>
   );
 };
