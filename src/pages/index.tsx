@@ -8,20 +8,22 @@ const LandingPage: NextPage = () => {
   const handleDarkModeToggle = () => setDarkTheme(!darkTheme);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Home</title>
         <meta name="home" content="portfolio site for augericke" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <span onClick={handleDarkModeToggle}>
-        {darkTheme ? (
-          <FaSun size='24' className='top-navigation-icon' />
-        ) : (
-          <FaMoon size='24' className='top-navigation-icon' />
-        )}
-      </span>
-    </div>
+      <div className='h-[10000px]'>
+        <span onClick={handleDarkModeToggle}>
+          {darkTheme ? (
+            <FaSun size='24' className='top-navigation-icon' />
+          ) : (
+            <FaMoon size='24' className='top-navigation-icon' />
+          )}
+        </span>
+      </div>
+    </>
   );
 };
 
