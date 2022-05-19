@@ -1,13 +1,9 @@
 import React from 'react';
 
-type FooterProps = {
-
-}
+type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = (props: FooterProps) => {
-  return (
-    <p>footer</p>
-  );
+  return <p>footer</p>;
 };
 
 export default Footer;
