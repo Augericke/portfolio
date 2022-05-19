@@ -51,11 +51,11 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           )}
         </span>
       </div>
-      <div className="mr-[10%] flex flex-row gap-4">
-        <p className="text-black dark:text-white">about</p>
-        <p className="text-black dark:text-white">work</p>
-        <p className="text-black dark:text-white">blog</p>
-        <p className="text-black dark:text-white">contact </p>
+      <div className="mr-[10%] flex flex-row gap-7">
+        <p className="text-xl font-light text-white">about</p>
+        <p className="text-xl font-light text-white">work</p>
+        <p className="text-xl font-light text-white">blog</p>
+        <p className="text-xl font-light text-white">contact </p>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply bg-primaryDark;
+    font-family: 'CentraNo2';
   }
 }
 
@@ -14,4 +15,124 @@
     transition duration-300 ease-in-out
     dark:text-white;
   }
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Black.otf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Extrabold.otf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-ExtraboldItalic.otf');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-BoldItalic.otf');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Medium.otf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-MediumItalic.otf');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Book.otf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-BookItalic.otf');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Light.otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-LightItalic.otf');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Thin.otf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-ThinItalic.otf');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-Hairline.otf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo2';
+  src: url('../assets/fonts/CentraNo2-HairlineItalic.otf');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
 }

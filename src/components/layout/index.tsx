@@ -8,7 +8,7 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="h-full bg-primary transition-colors transition-all duration-300 ease-in-out dark:bg-primaryDark">
+    <div className="h-full bg-primary transition-colors duration-300 ease-in-out dark:bg-primaryDark">
       <NavBar />
       <main>{React.cloneElement(children)}</main>
       <Footer />
