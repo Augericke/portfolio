@@ -37,7 +37,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   return (
     <div
       className={`fixed flex h-[70px] w-screen items-center justify-between
-                     bg-white dark:bg-black
+                     bg-primary dark:bg-primaryDark
                     ${
                       visible ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'
                     } transition-all duration-300 ease-in-out`}

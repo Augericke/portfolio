@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-primaryDark;
+  }
+}
+
 @layer components {
   .top-navigation-icon {
     @apply cursor-pointer
