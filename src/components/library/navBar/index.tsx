@@ -42,7 +42,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
                       visible ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'
                     } transition-all duration-300 ease-in-out`}
     >
-      <div>
+      <div className="ml-[5%]">
         <span onClick={handleDarkModeToggle}>
           {darkTheme ? (
             <FaSun size="30" className="top-navigation-icon" />
@@ -51,10 +51,11 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           )}
         </span>
       </div>
-      <div>
-        <p className="text-black dark:text-white">some text</p>
-        <p className="text-black dark:text-white">some text</p>
-        <p className="text-black dark:text-white">some text</p>
+      <div className="mr-[10%] flex flex-row gap-4">
+        <p className="text-black dark:text-white">about</p>
+        <p className="text-black dark:text-white">work</p>
+        <p className="text-black dark:text-white">blog</p>
+        <p className="text-black dark:text-white">contact </p>
       </div>
     </div>
   );
