@@ -3,9 +3,12 @@
   "rules": {
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "eqeqeq": "error",
-    "indent": ["error", 2, {
-      "SwitchCase": 1
-    }],
+    // "indent": ["error", 2, {
+    //   "SwitchCase": 1,
+    //   "ignoredNodes": ["JSXElement *"]
+      
+    // }],
+    "react/jsx-indent": "off",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "prefer-const": "error",

@@ -6,6 +6,4 @@ const debounce = (fn: Function, ms = 300) => {
   };
 };
 
-export {
-  debounce,
-};
+export { debounce };
