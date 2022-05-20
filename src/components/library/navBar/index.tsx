@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import useDarkMode from '../../../hooks/useDarkMode';
+import DarkModeToggle from './darkModeToggle';
 import { debounce } from '../../../utils/helpers';
-import { FaMoon, FaSun } from 'react-icons/fa';
 
 type NavBarProps = {};
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-  // State for dark mode
-  const [darkTheme, setDarkTheme] = useDarkMode();
-  const handleDarkModeToggle = () => setDarkTheme(!darkTheme);
-
   // State for hide/show nav on scroll
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [scrollAtTop, setScrollAtTop] = useState(true);
@@ -40,19 +35,11 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     <div
       className={`fixed flex h-[70px] w-screen items-center justify-between
                   bg-primary dark:bg-primaryDark
-                  ${scrollAtTop ? '' : 'opacity-95 shadow-lg'}
+                  ${scrollAtTop ? '' : 'opacity-80 shadow-lg'}
                   ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
                   transition-all duration-300 ease-in-out`}
     >
-      <div className="ml-[5%]">
-        <span onClick={handleDarkModeToggle}>
-          {darkTheme ? (
-            <FaSun size="30" className="top-navigation-icon" />
-          ) : (
-            <FaMoon size="30" className="top-navigation-icon" />
-          )}
-        </span>
-      </div>
+      <DarkModeToggle />
       <div className="mr-[10%] flex flex-row gap-7">
         <p className="text-xl font-light text-white">about</p>
         <p className="text-xl font-light text-white">work</p>
