@@ -12,7 +12,8 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
 
   // State for hide/show nav on scroll
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [scrollAtTop, setScrollAtTop] = useState(true);
+  const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
     const handleScroll = debounce(() => {
@@ -20,27 +21,28 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       const scrollBuffer = 10;
       const scrollMinDisplay = 5;
 
-      setVisible(
+      setShowNav(
         // Show Nav either if scroll up by distance larger than scrollBuffer or within minDisplay range from top of page
         (prevScrollPos > currentScrollPos &&
           prevScrollPos - currentScrollPos > scrollBuffer) ||
           currentScrollPos < scrollMinDisplay
       );
+      setScrollAtTop(currentScrollPos <= scrollBuffer);
       setPrevScrollPos(currentScrollPos);
     }, 100);
 
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos, visible]);
+  }, [prevScrollPos, showNav, scrollAtTop]);
 
   return (
     <div
       className={`fixed flex h-[70px] w-screen items-center justify-between
-                     bg-primary dark:bg-primaryDark
-                    ${
-                      visible ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'
-                    } transition-all duration-300 ease-in-out`}
+                  bg-primary dark:bg-primaryDark
+                  ${scrollAtTop ? '' : 'opacity-95 shadow-lg'}
+                  ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
+                  transition-all duration-300 ease-in-out`}
     >
       <div className="ml-[5%]">
         <span onClick={handleDarkModeToggle}>
