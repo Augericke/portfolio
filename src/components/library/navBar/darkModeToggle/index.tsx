@@ -13,17 +13,8 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = (
   const handleDarkModeToggle = () => setDarkTheme(!darkTheme);
 
   return (
-    // <div className="ml-[5%]">
-    //   <span onClick={handleDarkModeToggle}>
-    //     {darkTheme ? (
-    //       <FaSun size="30" className="top-navigation-icon" />
-    //     ) : (
-    //       <FaMoon size="30" className="top-navigation-icon" />
-    //     )}
-    //   </span>
-    // </div>
     <div
-      className={`flex h-7 w-20 items-center justify-start rounded-3xl
+      className={`flex h-7 w-14 items-center justify-start rounded-3xl
               bg-primaryDark transition-all duration-300 ease-in-out dark:bg-primary
                 ${darkTheme ? 'justify-start' : 'justify-end'}`} // Needed to trigger framer animation
       onClick={handleDarkModeToggle}
@@ -36,14 +27,14 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = (
           <motion.i
             key={darkTheme}
             initial={{ x: 30, opacity: 0 }}
-            animate={{ x: [-30, 0], y: [10, 0], opacity: 1 }}
-            exit={{ x: 15, y: -3, opacity: 0 }}
+            animate={{ x: [-15, 0], y: [10, 0], opacity: 1 }}
+            exit={{ x: 15, y: -5, opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
             {darkTheme ? (
               <FaSun size={20} className="text-primaryDark" />
             ) : (
-              <FaMoon size={15} className="text-primary" />
+              <FaMoon size={18} className="text-primary" />
             )}
           </motion.i>
         </AnimatePresence>
