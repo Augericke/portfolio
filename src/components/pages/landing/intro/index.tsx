@@ -11,7 +11,7 @@ const Intro: React.FC<IntroProps> = (props: IntroProps) => {
   useEffect(() => {
     const handleScroll = debounce(() => {
       const currentScrollPos = window.scrollY;
-      const minScrollDistance = 100;
+      const minScrollDistance = 50;
 
       setShowArrowPrompt(currentScrollPos <= minScrollDistance);
     }, 100);

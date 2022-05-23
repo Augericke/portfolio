@@ -13,7 +13,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   useEffect(() => {
     const handleScroll = debounce(() => {
       const currentScrollPos = window.scrollY;
-      const scrollBuffer = 10;
+      const scrollBuffer = 50;
       const scrollMinDisplay = 5;
 
       setShowNav(
@@ -35,12 +35,12 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     <div
       className={`fixed flex h-[70px] w-screen items-center justify-between
                   bg-primary dark:bg-primaryDark
-                  ${scrollAtTop ? '' : 'opacity-80 shadow-lg'}
+                  ${scrollAtTop ? '' : 'opacity-90 shadow-lg'}
                   ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
                   transition-all duration-300 ease-in-out`}
     >
       <div className="flex flex-1 pl-[5%]" />
-      <div className="flex items-center">
+      <div className="flex cursor-pointer">
         <DarkModeToggle />
       </div>
       <div className="flex flex-1 justify-end gap-7 pr-[5%]">

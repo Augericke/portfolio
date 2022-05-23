@@ -14,7 +14,7 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = (
 
   return (
     <div
-      className={`flex h-7 w-14 items-center justify-start rounded-3xl
+      className={`flex h-7 w-14 cursor-pointer items-center justify-start rounded-3xl
               bg-primaryDark transition-all duration-300 ease-in-out dark:bg-primary
                 ${darkTheme ? 'justify-start' : 'justify-end'}`} // Needed to trigger framer animation
       onClick={handleDarkModeToggle}
@@ -28,7 +28,7 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = (
             key={darkTheme}
             initial={{ x: 30, opacity: 0 }}
             animate={{ x: [-15, 0], y: [10, 0], opacity: 1 }}
-            exit={{ x: 15, y: -5, opacity: 0 }}
+            exit={{ x: 15, y: -5, opacity: 0, rotate: 180 }}
             transition={{ duration: 0.4 }}
           >
             {darkTheme ? (
