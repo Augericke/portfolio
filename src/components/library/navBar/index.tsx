@@ -33,21 +33,18 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
 
   return (
     <div
-      className={`fixed flex h-[70px] w-screen items-center justify-between
+      className={`fixed flex h-[70px] w-screen items-center
                   bg-primary dark:bg-primaryDark
                   ${scrollAtTop ? '' : 'opacity-90 shadow-lg'}
                   ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
-                  transition-all duration-300 ease-in-out`}
+                  transition-{top} duration-300 ease-in-out`}
     >
-      <div className="flex flex-1 pl-[5%]" />
-      <div className="flex cursor-pointer">
-        <DarkModeToggle />
-      </div>
       <div className="flex flex-1 justify-end gap-7 pr-[5%]">
         <p className="text-xl font-light text-white">about</p>
         <p className="text-xl font-light text-white">work</p>
         <p className="text-xl font-light text-white">blog</p>
         <p className="text-xl font-light text-white">contact </p>
+        <DarkModeToggle />
       </div>
     </div>
   );
