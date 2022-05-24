@@ -25,10 +25,10 @@ const Intro: React.FC<IntroProps> = (props: IntroProps) => {
     <>
       <div className="flex h-[90vh] items-center justify-center">
         <div className="mb-12 flex flex-col items-start justify-start">
-          <p className="mb-7 text-3xl font-light text-white">
+          <p className="mb-5 font-light text-white md:mb-6 md:text-2xl lg:mb-7 lg:text-3xl">
             Hello, my name is
           </p>
-          <p className="text-8xl font-extrabold text-primaryDark dark:text-primary">
+          <p className="text-4xl font-extrabold text-primaryDark dark:text-primary sm:text-6xl md:text-7xl lg:text-8xl">
             Austin Gericke.
           </p>
         </div>
