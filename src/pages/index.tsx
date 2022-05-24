@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Intro from '../components/pages/landing/intro';
-// import Project from '../components/pages/landing/project';
+import Project from '../components/pages/landing/project';
 
 const LandingPage: NextPage = () => {
   return (
@@ -12,7 +12,7 @@ const LandingPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Intro />
-      {/* <Project /> */}
+      <Project />
       <div className="h-[10000px]"></div>
     </>
   );

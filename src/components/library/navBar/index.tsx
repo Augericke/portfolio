@@ -33,7 +33,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
 
   return (
     <div
-      className={`fixed flex h-[70px] w-screen items-center
+      className={`fixed z-50 flex h-[70px] w-screen items-center
                   bg-primary dark:bg-primaryDark
                   ${scrollAtTop ? '' : 'opacity-90 shadow-lg'}
                   ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
