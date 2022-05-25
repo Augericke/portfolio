@@ -19,31 +19,52 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     projectSkills = [],
     githubUrl,
     projectUrl,
+    direction = 'right',
   } = props;
 
   console.log(projectSkills);
   console.log(githubUrl);
   console.log(githubUrl === undefined);
   return (
-    <div className="mt-12 flex flex-col-reverse items-center md:flex-row md:justify-center">
+    <div
+      className={`mt-12 flex flex-col-reverse items-center md:justify-center
+                     ${
+                       direction === 'right'
+                         ? 'md:flex-row '
+                         : 'md:flex-row-reverse'
+                     }`}
+    >
       <div
-        className="relative z-10 -mt-44 w-2/3 overflow-hidden rounded-[20px] bg-primaryDark
-                 shadow-lg dark:bg-primary md:z-0 md:mt-0 md:min-h-[20rem]
-                   md:w-2/3 lg:min-h-[24rem] xl:w-[850px]"
+        className={`relative z-10 -mt-44 flex w-2/3 overflow-hidden rounded-[20px]
+                   bg-primaryDark shadow-lg dark:bg-primary md:z-0 md:mt-0
+                   md:min-h-[20rem] md:w-2/3 lg:min-h-[24rem] xl:w-[850px]
+                   ${direction === 'right' ? '' : 'flex justify-end'}
+                   `}
       >
         <div className="rounded-20px flex w-full justify-center md:w-7/12 lg:h-96">
           <div className="flex w-10/12 flex-col justify-evenly">
-            <p className="lg mt-8 mb-5 text-lg font-bold text-white md:text-xl lg:text-4xl">
+            <p
+              className={`lg mt-8 mb-5 text-lg font-bold text-white md:text-xl lg:text-4xl
+                           ${direction === 'right' ? '' : 'md:text-right'}`}
+            >
               {projectTitle}
             </p>
-            <p className="text-sm text-white md:text-base lg:text-lg">
+            <p
+              className={`text-sm text-white md:text-base lg:text-lg
+                          ${direction === 'right' ? '' : 'md:text-right'}`}
+            >
               {projectAbout}
             </p>
-            <div className="flex flex-col items-center justify-center md:w-full md:items-start">
+            <div className="flex flex-col md:w-full md:items-start">
               <div
-                className="mt-8 flex flex-wrap justify-center gap-4
-                          gap-y-2 text-xs font-light md:justify-start
-                          md:gap-x-8 md:text-xs lg:text-base"
+                className={`mt-8 flex w-full flex-wrap
+                          justify-center gap-4 gap-y-2 text-xs font-light
+                          md:gap-x-8 md:text-xs lg:text-base
+                          ${
+                            direction === 'right'
+                              ? 'md:justify-start'
+                              : 'md:justify-end'
+                          }`}
               >
                 {projectSkills.map((skill, key) => {
                   return (
@@ -54,7 +75,14 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                 })}
               </div>
               {(githubUrl || projectUrl) && (
-                <div className="mt-4 mb-8 flex items-center justify-center gap-4 text-white md:justify-start">
+                <div
+                  className={`mt-4 mb-8 flex w-full items-center  justify-center gap-4 text-white
+                                      ${
+                                        direction === 'right'
+                                          ? 'md:justify-start'
+                                          : 'md:justify-end'
+                                      } `}
+                >
                   {githubUrl && (
                     <a href={githubUrl} target="_blank" rel="noreferrer">
                       <FaGithub size={20} />
@@ -72,8 +100,14 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
         </div>
       </div>
       <div
-        className="relative h-96 w-10/12  overflow-hidden rounded-[20px] shadow-lg md:-mt-16 md:-ml-[25vw] md:h-80 md:w-5/12
-                   lg:h-96 lg:w-5/12 xl:-ml-[300px] xl:h-[400px] xl:w-[500px]"
+        className={`relative h-96 w-10/12  overflow-hidden rounded-[20px]
+                    shadow-lg md:-mt-16  md:h-80 md:w-5/12
+                   lg:h-96 lg:w-5/12  xl:h-[400px] xl:w-[500px]
+                   ${
+                     direction === 'right'
+                       ? 'md:-ml-[25vw] xl:-ml-[300px]'
+                       : 'md:-mr-[25vw] xl:-mr-[300px]'
+                   }`}
       >
         <Image
           src={PlaceHolderimage}
