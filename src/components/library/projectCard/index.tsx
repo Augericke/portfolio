@@ -22,9 +22,6 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     direction = 'right',
   } = props;
 
-  console.log(projectSkills);
-  console.log(githubUrl);
-  console.log(githubUrl === undefined);
   return (
     <div
       className={`mt-12 flex flex-col-reverse items-center md:justify-center
