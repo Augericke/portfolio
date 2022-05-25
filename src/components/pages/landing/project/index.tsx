@@ -13,7 +13,14 @@ const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
         </div>
       </div>
 
-      <ProjectCard />
+      <ProjectCard
+        projectTitle="NYC Bike Crash Report"
+        projectAbout="I worked on this thing for these people using these tools. You can
+                      use this thing I used to do this other thing by going to this page."
+        projectSkills={['React', 'Typescript', 'NextJs', 'MongoDb']}
+        githubUrl="https://github.com/Augericke"
+        projectUrl="#"
+      />
     </>
   );
 };
