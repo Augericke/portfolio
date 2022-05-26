@@ -5,7 +5,8 @@ type AnimatedTitleProps = {
   text: string;
   customClassName?: string;
   customAnimation?: any;
-  delay?: number;
+  initialDelay?: number;
+  wordDelay?: number;
   stagger?: number;
   buffer?: string;
 };
@@ -14,7 +15,8 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   text,
   customClassName,
   customAnimation,
-  delay = 0.25,
+  initialDelay = 0,
+  wordDelay = 0.25,
   stagger = 0.05,
   buffer = '0px',
 }) => {
@@ -39,24 +41,24 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   };
 
   return (
-    <h2
-      aria-label={text}
-      role="heading"
-      className={customClassName ?? 'text-xl font-bold text-white'}
-    >
+    <h2 aria-label={text} role="heading">
       {/* Word */}
       {text.split(' ').map((word, index) => {
+        const childrenDelay = initialDelay
+          ? (initialDelay + index) * wordDelay
+          : index * wordDelay;
+
         return (
           <motion.span
             key={index}
-            className={'mr-2 inline-block whitespace-nowrap'}
+            className={`${customClassName} inline-block whitespace-nowrap`}
             aria-hidden="true"
             variants={wordAnimation}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: buffer }}
             transition={{
-              delayChildren: index * delay,
+              delayChildren: childrenDelay,
               staggerChildren: stagger,
             }}
           >
@@ -65,7 +67,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
               return (
                 <motion.span
                   key={index}
-                  className={'-mr-[0.05em] inline-block'}
+                  className={'inline-block'}
                   aria-hidden="true"
                   variants={customAnimation ?? characterAnimation}
                 >
