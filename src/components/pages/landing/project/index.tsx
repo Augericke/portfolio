@@ -34,7 +34,7 @@ const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
 
   return (
     <>
-      <div className="mt-96 flex flex-col items-center justify-center gap-32">
+      <div className="mt-96 flex w-full flex-col items-center justify-center gap-32">
         <motion.div
           initial={{ y: 0, opacity: 0 }}
           whileInView={{ y: [30, 0], opacity: 1 }}
@@ -71,9 +71,10 @@ function renderCard(projectCard: ReactNode, key?: any) {
   return (
     <motion.div
       key={key}
+      className="w-full"
       initial={{ y: 0, opacity: 0 }}
       whileInView={{ y: [50, 0], opacity: 1 }}
-      viewport={{ once: true, margin: '-200px' }}
+      viewport={{ once: true, margin: '-150px' }}
       transition={{ duration: 1 }}
     >
       {projectCard}

@@ -2,6 +2,7 @@ import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import PlaceHolderimage from '../../../assets/images/placeHolder.jpg';
+import AnimatedTitle from '../animations/animatedTitle';
 
 type ProjectCardProps = {
   projectTitle: string;
@@ -32,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                      }`}
     >
       <div
-        className={`relative z-10 -mt-44 flex w-2/3 overflow-hidden rounded-[20px]
+        className={`relative z-10 -mt-56 flex w-2/3 overflow-hidden rounded-[20px]
                    bg-primaryDark shadow-lg dark:bg-primary md:z-0 md:mt-0
                    md:min-h-[20rem] md:w-2/3 lg:min-h-[24rem] xl:w-[850px]
                    ${direction === 'right' ? '' : 'flex justify-end'}
@@ -40,12 +41,28 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
       >
         <div className="rounded-20px flex w-full justify-center md:w-7/12 lg:h-96">
           <div className="flex w-10/12 flex-col justify-evenly">
-            <p
-              className={`lg mt-8 mb-5 text-lg font-bold text-white md:text-xl lg:text-4xl
-                           ${direction === 'right' ? '' : 'md:text-right'}`}
-            >
-              {projectTitle}
-            </p>
+            <span className="mt-8 mb-5">
+              <AnimatedTitle
+                text={projectTitle}
+                customClassName={`lg leading-[0px] mr-3  text-lg font-bold text-white md:text-xl lg:text-4xl
+                                ${
+                                  direction === 'right' ? '' : 'md:text-right'
+                                }`}
+                initialDelay={2}
+                customAnimation={{
+                  hidden: {
+                    opacity: 0,
+                  },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      duration: 2,
+                      ease: [0.2, 0.65, 0.3, 0.9],
+                    },
+                  },
+                }}
+              />
+            </span>
             <p
               className={`text-sm text-white md:text-base lg:text-lg
                           ${direction === 'right' ? '' : 'md:text-right'}`}
@@ -65,9 +82,29 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
               >
                 {projectSkills.map((skill, key) => {
                   return (
-                    <p className="text-white" key={key}>
-                      {skill}
-                    </p>
+                    <AnimatedTitle
+                      key={key}
+                      text={skill}
+                      customClassName={`text-white
+                                      ${
+                                        direction === 'right'
+                                          ? ''
+                                          : 'md:text-right'
+                                      }`}
+                      initialDelay={3}
+                      customAnimation={{
+                        hidden: {
+                          opacity: 0,
+                        },
+                        visible: {
+                          opacity: 1,
+                          transition: {
+                            duration: 2,
+                            ease: [0.2, 0.65, 0.3, 0.9],
+                          },
+                        },
+                      }}
+                    />
                   );
                 })}
               </div>
