@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AnimatedTitle from '../../../library/animations/animatedTitle';
 import { debounce } from '../../../../utils/helpers';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -25,12 +26,20 @@ const Intro: React.FC<IntroProps> = (props: IntroProps) => {
     <>
       <div className="flex h-[90vh] items-center justify-center">
         <div className="mb-12 flex flex-col items-start justify-start">
+          {/* <AnimatedTitle
+            text="Hello, my name is"
+            customClassName="mb-5 font-light text-white md:mb-6 md:text-2xl lg:mb-7 lg:text-3xl"
+          /> */}
           <p className="mb-5 font-light text-white md:mb-6 md:text-2xl lg:mb-7 lg:text-3xl">
             Hello, my name is
           </p>
-          <p className="text-4xl font-extrabold text-primaryDark dark:text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+          <AnimatedTitle
+            text="Austin Gericke"
+            customClassName="text-4xl font-extrabold text-primaryDark dark:text-primary sm:text-6xl md:text-7xl lg:text-8xl"
+          />
+          {/* <p className="text-4xl font-extrabold text-primaryDark dark:text-primary sm:text-6xl md:text-7xl lg:text-8xl">
             Austin Gericke.
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="flex items-center justify-center">
