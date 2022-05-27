@@ -91,7 +91,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                                           ? ''
                                           : 'md:text-right'
                                       }`}
-                      initialDelay={3}
+                      initialDelay={2.5}
                       customAnimation={{
                         hidden: {
                           opacity: 0,

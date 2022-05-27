@@ -2,9 +2,11 @@ import React, { ReactNode } from 'react';
 import ProjectCard from '../../../library/projectCard';
 import { motion } from 'framer-motion';
 
-type ProjectProps = {};
+type ProjectSectionProps = {};
 
-const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
+const ProjectSection: React.FC<ProjectSectionProps> = (
+  props: ProjectSectionProps
+) => {
   const cardList = [
     {
       projectTitle: 'NYC Bike Crash Report',
@@ -65,7 +67,7 @@ const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
   );
 };
 
-export default Project;
+export default ProjectSection;
 
 function renderCard(projectCard: ReactNode, key?: any) {
   return (

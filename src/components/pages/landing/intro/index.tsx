@@ -1,26 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AnimatedTitle from '../../../library/animations/animatedTitle';
-import { debounce } from '../../../../utils/helpers';
 import { FaChevronDown } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-type IntroProps = {};
+type IntroSectionProps = {};
 
-const Intro: React.FC<IntroProps> = (props: IntroProps) => {
-  const [showArrowPrompt, setShowArrowPrompt] = useState(true);
+const IntroSection: React.FC<IntroSectionProps> = (
+  props: IntroSectionProps
+) => {
+  const arrowAnimation = {
+    hidden: {
+      opacity: 1,
+    },
+    visible: {
+      opacity: 0,
+      transition: {
+        duration: 2,
+      },
+    },
+  };
 
-  // Hide arrow prompt after minScrollDistance
-  useEffect(() => {
-    const handleScroll = debounce(() => {
-      const currentScrollPos = window.scrollY;
-      const minScrollDistance = 50;
-
-      setShowArrowPrompt(currentScrollPos <= minScrollDistance);
-    }, 100);
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [showArrowPrompt]);
+  const customTitleAnimation = {
+    hidden: {
+      opacity: 0,
+      y: '0.25em',
+    },
+    visible: {
+      opacity: 1,
+      y: '0em',
+      transition: {
+        duration: 4,
+        y: { type: 'spring', stiffness: 100 },
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+  };
 
   return (
     <>
@@ -34,35 +48,25 @@ const Intro: React.FC<IntroProps> = (props: IntroProps) => {
             text="Austin Gericke."
             customClassName="text-4xl font-extrabold mr-5 text-primaryDark dark:text-primary sm:text-6xl md:text-7xl lg:text-8xl"
             initialDelay={7}
-            customAnimation={{
-              hidden: {
-                opacity: 0,
-                y: '0.25em',
-              },
-              visible: {
-                opacity: 1,
-                y: '0em',
-                transition: {
-                  duration: 4,
-                  y: { type: 'spring', stiffness: 100 },
-                  ease: [0.2, 0.65, 0.3, 0.9],
-                },
-              },
-            }}
+            customAnimation={customTitleAnimation}
           />
         </div>
       </div>
-      <div className="flex items-center justify-center">
+      <motion.div
+        variants={arrowAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-350px' }}
+        className="flex items-center justify-center"
+      >
         <FaChevronDown
           size="40"
           className={`animate-bounce text-primaryDark transition-opacity
-                      duration-300 ease-out dark:text-primary  ${
-                        showArrowPrompt ? 'opacity-100' : 'opacity-0'
-                      }`}
+                      duration-300 ease-out dark:text-primary`}
         />
-      </div>
+      </motion.div>
     </>
   );
 };
 
-export default Intro;
+export default IntroSection;
