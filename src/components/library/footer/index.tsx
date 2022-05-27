@@ -6,13 +6,16 @@ type FooterProps = {};
 const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   return (
     <div className="mt-28 flex h-44 w-full items-center justify-center ">
-      <div className="flex justify-center gap-10">
-        <a href="https://github.com/Augericke" className="text-4xl text-white">
+      <div className="flex items-center justify-center gap-5 border-t-2 border-t-primaryDark px-6 dark:border-t-primary">
+        <a
+          href="https://github.com/Augericke"
+          className="mt-8 text-2xl text-white"
+        >
           <FaGithub />
         </a>
         <a
           href="https://www.linkedin.com/in/austingericke/"
-          className="text-4xl text-white"
+          className="mt-8 text-2xl text-white"
         >
           <FaLinkedinIn />
         </a>

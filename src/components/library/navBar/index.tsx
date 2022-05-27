@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DarkModeToggle from './darkModeToggle';
+import Logo from '../animations/logo';
 import { debounce } from '../../../utils/helpers';
 
 type NavBarProps = {};
@@ -39,6 +40,9 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
                   ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
                   transition-{top} duration-300 ease-in-out`}
     >
+      <div className="ml-8">
+        <Logo />
+      </div>
       <div className="flex flex-1 justify-end gap-7 pr-[5%]">
         <p className="text-xl font-light text-white">about</p>
         <p className="text-xl font-light text-white">work</p>
