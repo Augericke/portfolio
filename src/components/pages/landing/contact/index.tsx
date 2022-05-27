@@ -31,7 +31,7 @@ const ContactSection: React.FC<ContactSectionProps> = (
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 1 }}
             className="shadow-lgdark:bg-primary flex w-full cursor-pointer justify-center
-                      rounded-full bg-primaryDark p-8 text-9xl font-extrabold text-white
+                      rounded-full bg-primaryDark p-8 text-9xl font-extrabold text-white dark:bg-primary
                       "
           >
             hi

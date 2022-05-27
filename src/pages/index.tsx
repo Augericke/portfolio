@@ -17,7 +17,6 @@ const LandingPage: NextPage = () => {
       <ProjectSection />
       <BlogSection />
       <ContactSection />
-      <div className="h-[10000px]"></div>
     </>
   );
 };
