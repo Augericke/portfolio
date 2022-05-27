@@ -3,6 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import PlaceHolderimage from '../../../assets/images/placeHolder.jpg';
 import AnimatedTitle from '../animations/animatedTitle';
+import { motion } from 'framer-motion';
 
 type ProjectCardProps = {
   projectTitle: string;
@@ -22,6 +23,20 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     projectUrl,
     direction = 'right',
   } = props;
+
+  const bodyTextAnimation = {
+    hidden: {
+      y: 0,
+      opacity: 0,
+    },
+    visible: {
+      y: [10, 0],
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   return (
     <div
@@ -63,12 +78,17 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                 }}
               />
             </span>
-            <p
+            <motion.span
               className={`text-sm text-white md:text-base lg:text-lg
                           ${direction === 'right' ? '' : 'md:text-right'}`}
+              variants={bodyTextAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 1 }}
             >
               {projectAbout}
-            </p>
+            </motion.span>
             <div className="flex flex-col md:w-full md:items-start">
               <div
                 className={`mt-8 flex w-full flex-wrap
@@ -82,29 +102,20 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
               >
                 {projectSkills.map((skill, key) => {
                   return (
-                    <AnimatedTitle
+                    <motion.span
                       key={key}
-                      text={skill}
-                      customClassName={`text-white
-                                      ${
-                                        direction === 'right'
-                                          ? ''
-                                          : 'md:text-right'
-                                      }`}
-                      initialDelay={2.5}
-                      customAnimation={{
-                        hidden: {
-                          opacity: 0,
-                        },
-                        visible: {
-                          opacity: 1,
-                          transition: {
-                            duration: 2,
-                            ease: [0.2, 0.65, 0.3, 0.9],
-                          },
-                        },
-                      }}
-                    />
+                      className={`text-white
+                                 ${
+                                   direction === 'right' ? '' : 'md:text-right'
+                                 }`}
+                      variants={bodyTextAnimation}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: '-50px' }}
+                      transition={{ duration: 1 }}
+                    >
+                      {skill}
+                    </motion.span>
                   );
                 })}
               </div>
