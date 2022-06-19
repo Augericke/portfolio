@@ -8,7 +8,10 @@ const ContactSection: React.FC<ContactSectionProps> = (
 ) => {
   return (
     <>
-      <div className="mt-96 flex w-full flex-col items-center justify-center gap-32">
+      <div
+        className="mt-96 flex w-full flex-col items-center justify-center gap-32"
+        id="contact"
+      >
         <motion.div
           initial={{ y: 0, opacity: 0 }}
           whileInView={{ y: [30, 0], opacity: 1 }}
@@ -30,8 +33,8 @@ const ContactSection: React.FC<ContactSectionProps> = (
             whileInView={{ y: [30, 0], opacity: 1 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 1 }}
-            className="shadow-lgdark:bg-primary flex w-full cursor-pointer justify-center
-                      rounded-full bg-primaryDark p-8 text-9xl font-extrabold text-white dark:bg-primary
+            className="flex w-full cursor-pointer items-center justify-center rounded-full bg-primaryDark py-6 text-center
+                      text-8xl font-extrabold leading-none text-white shadow-lg dark:bg-primary
                       "
           >
             hi

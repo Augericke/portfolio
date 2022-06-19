@@ -8,8 +8,8 @@ const Logo: React.FC<LogoProps> = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 99 45"
-        width={100}
-        height={100}
+        width={110}
+        height={110}
         className="transition-all duration-[1s] dark:rotate-180"
       >
         <path

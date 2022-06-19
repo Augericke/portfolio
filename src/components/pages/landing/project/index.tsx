@@ -36,7 +36,10 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
 
   return (
     <>
-      <div className="mt-96 flex w-full flex-col items-center justify-center gap-32">
+      <div
+        className="mt-96 flex w-full flex-col items-center justify-center gap-32"
+        id="work"
+      >
         <motion.div
           initial={{ y: 0, opacity: 0 }}
           whileInView={{ y: [30, 0], opacity: 1 }}

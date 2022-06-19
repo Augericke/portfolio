@@ -29,7 +29,10 @@ const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
   ];
   return (
     <>
-      <div className="mt-96 flex w-full flex-col items-center justify-center gap-16">
+      <div
+        className="mt-96 flex w-full flex-col items-center justify-center gap-16"
+        id="blog"
+      >
         <motion.div
           initial={{ y: 0, opacity: 0 }}
           whileInView={{ y: [30, 0], opacity: 1 }}

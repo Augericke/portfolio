@@ -38,7 +38,7 @@ const IntroSection: React.FC<IntroSectionProps> = (
 
   return (
     <>
-      <div className="flex h-[90vh] items-center justify-center">
+      <div className="flex h-[90vh] items-center justify-center" id="about">
         <div className="mb-12 flex flex-col items-start justify-start">
           <AnimatedTitle
             text="Hello, my name is"

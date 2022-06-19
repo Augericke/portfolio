@@ -3,11 +3,15 @@ import useDarkMode from '../../../../hooks/useDarkMode';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type DarkModeToggleProps = {};
+type DarkModeToggleProps = {
+  inverseColors?: boolean;
+};
 
 const DarkModeToggle: React.FC<DarkModeToggleProps> = (
   props: DarkModeToggleProps
 ) => {
+  const { inverseColors = false } = props;
+
   // State for dark mode
   const [darkTheme, setDarkTheme] = useDarkMode();
   const handleDarkModeToggle = () => setDarkTheme(!darkTheme);
@@ -15,7 +19,12 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = (
   return (
     <div
       className={`flex h-7 w-14 cursor-pointer items-center justify-start rounded-3xl
-              bg-primaryDark transition-all duration-300 ease-in-out dark:bg-primary
+                transition-all duration-300 ease-in-out
+                ${
+                  inverseColors
+                    ? 'bg-primaryDark dark:bg-primary'
+                    : 'bg-primary dark:bg-primaryDark'
+                }
                 ${darkTheme ? 'justify-start' : 'justify-end'}`} // Needed to trigger framer animation
       onClick={handleDarkModeToggle}
     >
