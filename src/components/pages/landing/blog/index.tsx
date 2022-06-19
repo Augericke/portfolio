@@ -49,14 +49,14 @@ const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
           return (
             <motion.div
               key={key}
-              className="flex min-h-[200px] w-10/12 flex-col items-center justify-center overflow-hidden rounded-[20px]
+              className="flex min-h-[200px] w-10/12 flex-col items-center justify-center gap-y-1 overflow-hidden rounded-[20px]
                          bg-primaryDark dark:bg-primary md:w-1/2 xl:w-[800px]"
               initial={{ y: 0, opacity: 0 }}
               whileInView={{ y: [50, 0], opacity: 1 }}
               viewport={{ once: true, margin: '-150px' }}
               transition={{ duration: 1 }}
             >
-              <div className="mt-6 flex w-10/12 items-center justify-between">
+              <div className="mt-6 flex w-10/12 flex-col items-start justify-between gap-y-2 lg:flex-row lg:gap-y-0">
                 <h2 className="text-xl font-bold text-white md:text-3xl">
                   {blog.title}
                 </h2>
@@ -64,13 +64,13 @@ const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
                   {blog.publishedAt}
                 </p>
               </div>
-              <div className="mt-4 mb-6 w-10/12">
+              <div className="mt-4 mb-6 flex w-10/12 flex-col-reverse gap-y-6 lg:flex-col lg:gap-y-2">
                 <div className="mb-3 flex flex-wrap gap-5">
                   {blog.topics.map((topic, key) => {
                     return (
                       <p
                         key={key}
-                        className="overflow-hidden rounded-3xl bg-primary px-2 text-xs text-white dark:bg-primaryDark md:text-sm"
+                        className="overflow-hidden rounded-3xl bg-primary px-2 py-1 text-xs text-white dark:bg-primaryDark"
                       >
                         {topic}
                       </p>
