@@ -19,7 +19,7 @@ const ContactSection: React.FC<ContactSectionProps> = (
           transition={{ duration: 1 }}
           className="flex w-2/3 justify-center lg:w-1/2"
         >
-          <p className="mb-5 w-full text-justify font-light text-white md:mb-6 md:text-2xl lg:mb-7 lg:w-2/3 lg:text-3xl">
+          <p className="mb-5 w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
             My inbox is always open - so if you want to work together on
             something don&apos;t be afraid to say hi.
           </p>

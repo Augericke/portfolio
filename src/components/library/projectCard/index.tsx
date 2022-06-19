@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     projectSkills = [],
     githubUrl,
     projectUrl,
-    direction = 'right',
+    direction = 'left',
   } = props;
 
   const bodyTextAnimation = {
@@ -42,16 +42,16 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     <div
       className={`mt-12 flex flex-col-reverse items-center md:justify-center
                      ${
-                       direction === 'right'
+                       direction === 'left'
                          ? 'md:flex-row '
                          : 'md:flex-row-reverse'
                      }`}
     >
       <div
-        className={`relative z-10 -mt-56 flex w-2/3 overflow-hidden rounded-[20px]
+        className={`relative z-10 -mt-56 flex w-3/4 overflow-hidden rounded-[20px]
                    bg-primaryDark shadow-lg dark:bg-primary md:z-0 md:mt-0
                    md:min-h-[20rem] md:w-2/3 lg:min-h-[24rem] xl:w-[850px]
-                   ${direction === 'right' ? '' : 'flex justify-end'}
+                   ${direction === 'left' ? '' : 'flex justify-end'}
                    `}
       >
         <div className="rounded-20px flex w-full justify-center md:w-7/12 lg:h-96">
@@ -59,10 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
             <span className="mt-8 mb-5">
               <AnimatedTitle
                 text={projectTitle}
-                customClassName={`lg leading-[0px] mr-3  text-lg font-bold text-white md:text-xl lg:text-4xl
-                                ${
-                                  direction === 'right' ? '' : 'md:text-right'
-                                }`}
+                customClassName="lg leading-[0px] mr-3  text-2xl font-bold text-white lg:text-4xl"
                 initialDelay={2}
                 customAnimation={{
                   hidden: {
@@ -76,11 +73,12 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                     },
                   },
                 }}
+                position={direction}
               />
             </span>
             <motion.span
-              className={`text-sm text-white md:text-base lg:text-lg
-                          ${direction === 'right' ? '' : 'md:text-right'}`}
+              className={`text-base text-white lg:text-lg
+                          ${direction === 'left' ? '' : 'md:text-right'}`}
               variants={bodyTextAnimation}
               initial="hidden"
               whileInView="visible"
@@ -95,7 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                           justify-center gap-4 gap-y-2 text-xs font-light
                           md:gap-x-8 md:text-xs lg:text-base
                           ${
-                            direction === 'right'
+                            direction === 'left'
                               ? 'md:justify-start'
                               : 'md:justify-end'
                           }`}
@@ -106,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                       key={key}
                       className={`text-white
                                  ${
-                                   direction === 'right' ? '' : 'md:text-right'
+                                   direction === 'left' ? '' : 'md:text-right'
                                  }`}
                       variants={bodyTextAnimation}
                       initial="hidden"
@@ -123,7 +121,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                 <div
                   className={`mt-4 mb-8 flex w-full items-center  justify-center gap-4 text-white
                                       ${
-                                        direction === 'right'
+                                        direction === 'left'
                                           ? 'md:justify-start'
                                           : 'md:justify-end'
                                       } `}
@@ -145,11 +143,11 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
         </div>
       </div>
       <div
-        className={`relative h-96 w-10/12  overflow-hidden rounded-[20px]
+        className={`relative h-80 w-10/12  overflow-hidden rounded-[20px]
                     shadow-lg md:-mt-16  md:h-80 md:w-5/12
                    lg:h-96 lg:w-5/12  xl:h-[400px] xl:w-[500px]
                    ${
-                     direction === 'right'
+                     direction === 'left'
                        ? 'md:-ml-[25vw] xl:-ml-[300px]'
                        : 'md:-mr-[25vw] xl:-mr-[300px]'
                    }`}
@@ -161,7 +159,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
           placeholder="blur"
         />
         <div
-          className="absolute flex h-full w-full items-center justify-center gap-8 bg-primaryDark/50
+          className="absolute flex h-full w-full items-center justify-center gap-8
                     text-xs text-white dark:bg-primary/40 md:z-10 md:bg-transparent md:opacity-0 md:transition-all
                     md:duration-500 md:ease-in-out md:hover:bg-primaryDark/50 md:hover:text-4xl
                     md:hover:opacity-100 md:hover:dark:bg-primary/50 lg:hover:text-6xl"

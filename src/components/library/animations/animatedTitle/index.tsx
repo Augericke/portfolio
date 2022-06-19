@@ -9,6 +9,7 @@ type AnimatedTitleProps = {
   wordDelay?: number;
   stagger?: number;
   buffer?: string;
+  position?: 'left' | 'right';
 };
 
 const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
@@ -19,6 +20,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   wordDelay = 0.25,
   stagger = 0.05,
   buffer = '0px',
+  position = 'left',
 }) => {
   const wordAnimation = {
     hidden: {},
@@ -41,7 +43,11 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   };
 
   return (
-    <h2 aria-label={text} role="heading">
+    <h2
+      aria-label={text}
+      role="heading"
+      className={position === 'left' ? '' : 'text-right'}
+    >
       {/* Word */}
       {text.split(' ').map((word, index) => {
         const childrenDelay = initialDelay
