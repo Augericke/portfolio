@@ -63,6 +63,9 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
               <AnimatedTitle
                 text={projectTitle}
                 customClassName="lg leading-[0px] mr-3  text-2xl font-bold text-white lg:text-4xl"
+                customHeaderClass={`${
+                  direction === 'left' ? '' : 'md:text-right'
+                } text-center`}
                 initialDelay={2}
                 customAnimation={{
                   hidden: {
@@ -76,7 +79,6 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                     },
                   },
                 }}
-                position={direction}
               />
             </span>
             <motion.span
@@ -93,8 +95,8 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
             <div className="flex flex-col md:w-full md:items-start">
               <div
                 className={`mt-8 flex w-full flex-wrap
-                          justify-center gap-4 gap-y-2 text-xs font-light
-                          md:gap-x-8 md:text-xs lg:text-base
+                          justify-center gap-4 gap-y-2 text-base font-light
+                          md:gap-x-8
                           ${
                             direction === 'left'
                               ? 'md:justify-start'
