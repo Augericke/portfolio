@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
-import PlaceHolderimage from '../../../assets/images/placeHolder.jpg';
+import type { StaticImageData } from 'next/image';
+import PlaceHolderimage from '../../../assets/images/project/placeHolder.jpg';
 import AnimatedTitle from '../animations/animatedTitle';
 import { motion } from 'framer-motion';
 
@@ -9,6 +10,7 @@ type ProjectCardProps = {
   projectTitle: string;
   projectAbout: string;
   projectSkills: string[];
+  projectImage?: StaticImageData;
   githubUrl?: string;
   projectUrl?: string;
   direction?: 'left' | 'right';
@@ -19,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     projectTitle,
     projectAbout,
     projectSkills = [],
+    projectImage = PlaceHolderimage,
     githubUrl,
     projectUrl,
     direction = 'left',
@@ -153,7 +156,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                    }`}
       >
         <Image
-          src={PlaceHolderimage}
+          src={projectImage ? projectImage : PlaceHolderimage}
           alt="place holder image"
           layout="fill"
           placeholder="blur"

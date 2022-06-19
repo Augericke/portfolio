@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import ProjectCard from '../../../library/projectCard';
 import { motion } from 'framer-motion';
+import BikeCrashImage from '../../../../assets/images/project/BikeCrashProject.png';
 
 type ProjectSectionProps = {};
 
@@ -11,13 +12,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
     {
       projectTitle: 'NYC Bike Crash Report',
       projectAbout:
-        'I worked on this thing for these people using these tools. You can use this thing I used to do this other thing by going to this page.',
-      projectSkills: ['React', 'Typescript', 'NextJs', 'MongoDb'],
-      githubUrl: 'https://github.com/Augericke',
-      projectUrl: '#',
+        'A dashboard cyclists can use to inform their commute, provide an overview of cycling in the city, or allow for a detailed look at the risks present in one’s own neighborhood.',
+      projectSkills: ['R', 'Shiny'],
+      githubUrl: 'https://github.com/Augericke/NYC-Bike-Crash-Report',
+      projectUrl: 'https://agericke.shinyapps.io/NYC-Bike-Crash-Report-v2/',
+      projectImage: BikeCrashImage,
     },
     {
-      projectTitle: 'NYC Bike Crash Report',
+      projectTitle: 'Place Holder Project',
       projectAbout:
         'I worked on this thing for these people using these tools. You can use this thing I used to do this other thing by going to this page.',
       projectSkills: ['React', 'Typescript', 'NextJs', 'MongoDb'],
@@ -25,7 +27,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
       projectUrl: '#',
     },
     {
-      projectTitle: 'NYC Bike Crash Report',
+      projectTitle: 'Place Holder Project',
       projectAbout:
         'I worked on this thing for these people using these tools. You can use this thing I used to do this other thing by going to this page.',
       projectSkills: ['React', 'Typescript', 'NextJs', 'MongoDb'],
@@ -52,15 +54,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
           </p>
         </motion.div>
         {cardList.map((card, key) => {
-          const displayLeft = (key + 1) % 2 === 0;
+          const displayRight = (key + 1) % 2 === 0;
           return renderCard(
             <ProjectCard
               projectTitle={card.projectTitle}
               projectAbout={card.projectAbout}
               projectSkills={card.projectSkills}
+              projectImage={card.projectImage}
               githubUrl={card.githubUrl}
               projectUrl={card.projectUrl}
-              direction={displayLeft ? 'left' : 'right'}
+              direction={displayRight ? 'right' : 'left'}
             />,
             key
           );
