@@ -1,0 +1,24 @@
+import React from 'react';
+import Post from '../../components/pages/blog/post'
+
+export const meta = {
+  isPublished: true,
+  title: 'Mobile-First CSS: Is It Time for a Rethink?',
+  tags: ['NextJS', 'TailwindCS', 'MongoDB'],
+  abstract: 'An in-depth look at the technical structure for my blog.',
+  publishedAt: '2022-05-20T17:00:30.000Z',
+}
+
+# My MDX Page with a Layout
+
+In the conclusion of my post analyzing NYC taxi and Uber trips, I noted that Citi Bike, New York City’s bike share system, also releases public data, totaling 22.2 million rides from July 2013 through November 2015. With the recent news that the Citi Bike system topped 10 million rides in 2015, making it one of the world’s largest bike shares, it seemed like an opportune time to investigate the publicly available data.
+
+- One
+- Two
+- Three
+
+This is a list in markdown:
+Checkout my React component:
+
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
