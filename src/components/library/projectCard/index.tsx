@@ -62,9 +62,11 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
             <span className="mt-8 mb-5">
               <AnimatedTitle
                 text={projectTitle}
-                customClassName="leading-[0px] mr-3  text-2xl font-bold text-white lg:text-4xl"
+                customClassName={`leading-[0px] text-2xl font-bold text-white lg:text-4xl ${
+                  direction === 'left' ? 'mr-3' : 'ml-3'
+                }`}
                 customHeaderClass={`${
-                  direction === 'left' ? '' : 'md:text-right'
+                  direction === 'left' ? 'md:text-left' : 'md:text-right'
                 } text-center`}
                 initialDelay={2}
                 customAnimation={{

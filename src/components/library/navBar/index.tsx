@@ -21,7 +21,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     },
     {
       name: 'blog',
-      link: '/#blog',
+      link: '/blog',
     },
     {
       name: 'contact',

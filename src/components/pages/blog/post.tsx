@@ -1,7 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
 import AnimatedTitle from '../../library/animations/animatedTitle';
+import { motion } from 'framer-motion';
+import { FaChevronLeft } from 'react-icons/fa';
 import { formatDate } from '../../../utils/dateComputer';
 
 type PostProps = {
@@ -17,7 +19,14 @@ const Post: React.FC<PostProps> = ({ meta, children }) => {
         <meta name={`Blog | ${meta.title}`} content={meta.abstract} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex min-h-[80vh] justify-center pt-16 md:pt-32">
+      <div className="hidden w-1/12 justify-center pt-24 text-3xl text-white md:flex">
+        <Link href="/blog">
+          <a>
+            <FaChevronLeft />
+          </a>
+        </Link>
+      </div>
+      <div className="flex min-h-[80vh] justify-center pt-5">
         <div
           className="flex w-screen flex-col items-center justify-start bg-stone-100
                       md:w-9/12 md:rounded-xl"
