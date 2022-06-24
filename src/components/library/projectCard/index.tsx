@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
               <AnimatedTitle
                 text={projectTitle}
                 customClassName={`leading-[0px] text-2xl font-bold text-white lg:text-4xl ${
-                  direction === 'left' ? 'mr-3' : 'ml-3'
+                  direction === 'left' ? 'mr-3' : 'mr-3 md:ml-3'
                 }`}
                 customHeaderClass={`${
                   direction === 'left' ? 'md:text-left' : 'md:text-right'
