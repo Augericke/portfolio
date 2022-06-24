@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import type { StaticImageData } from 'next/image';
-import PlaceHolderimage from '../../../assets/images/project/placeHolder.jpg';
+import PlaceHolderImage from '../../../assets/images/project/placeHolder.jpg';
 import AnimatedTitle from '../animations/animatedTitle';
 import { motion } from 'framer-motion';
 
@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     projectTitle,
     projectAbout,
     projectSkills = [],
-    projectImage = PlaceHolderimage,
+    projectImage = PlaceHolderImage,
     githubUrl,
     projectUrl,
     direction = 'left',
@@ -62,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
             <span className="mt-8 mb-5">
               <AnimatedTitle
                 text={projectTitle}
-                customClassName="lg leading-[0px] mr-3  text-2xl font-bold text-white lg:text-4xl"
+                customClassName="leading-[0px] mr-3  text-2xl font-bold text-white lg:text-4xl"
                 customHeaderClass={`${
                   direction === 'left' ? '' : 'md:text-right'
                 } text-center`}
@@ -158,7 +158,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                    }`}
       >
         <Image
-          src={projectImage ? projectImage : PlaceHolderimage}
+          src={projectImage ? projectImage : PlaceHolderImage}
           alt="place holder image"
           layout="fill"
           placeholder="blur"

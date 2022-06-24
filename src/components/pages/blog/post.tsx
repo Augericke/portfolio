@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
+import AnimatedTitle from '../../library/animations/animatedTitle';
 import { formatDate } from '../../../utils/dateComputer';
 
 type PostProps = {
@@ -24,14 +26,36 @@ const Post: React.FC<PostProps> = ({ meta, children }) => {
             className="flex w-full items-center justify-center bg-primaryDark
                       shadow-md dark:bg-primary md:rounded-t-xl"
           >
-            <div className="my-8 flex h-fit w-11/12 flex-col gap-3 sm:w-10/12">
+            <div className="my-8 flex h-fit w-11/12 flex-col gap-4 sm:w-10/12">
               <p className="text-sm text-white opacity-80">
                 {formatDate(meta.publishedAt, 'LLL d, yyyy')}
               </p>
-              <h1 className="text-4xl font-bold text-primary dark:text-primaryDark md:text-5xl">
-                {meta.title}
-              </h1>
-              <div className="mt-3 flex flex-wrap gap-5">
+              <AnimatedTitle
+                text={meta.title}
+                customClassName="lg leading-[0px] mt-6 md:mt-0 mr-3 text-4xl font-bold text-primary dark:text-primaryDark md:text-5xl"
+                wordDelay={0.1}
+                customAnimation={{
+                  hidden: {
+                    opacity: 0,
+                    y: '0.25em',
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: '0em',
+                    transition: {
+                      duration: 1.5,
+                      ease: 'backInOut',
+                    },
+                  },
+                }}
+              />
+              <motion.div
+                initial={{ y: 0, opacity: 0 }}
+                whileInView={{ y: [30, 0], opacity: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: 1.5, duration: 1.5, ease: 'backInOut' }}
+                className="mt-3 flex flex-wrap gap-5"
+              >
                 {meta.tags.map((tag: string, key: number) => {
                   return (
                     <p
@@ -43,10 +67,10 @@ const Post: React.FC<PostProps> = ({ meta, children }) => {
                     </p>
                   );
                 })}
-              </div>
+              </motion.div>
             </div>
           </div>
-          <div className="my-10 h-fit w-11/12 sm:w-10/12">{children}</div>
+          <div className="-mt-5 mb-10 h-fit w-11/12 sm:w-10/12">{children}</div>
         </div>
       </div>
     </>

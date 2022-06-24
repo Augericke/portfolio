@@ -9,7 +9,7 @@ const ContactSection: React.FC<ContactSectionProps> = (
   return (
     <>
       <div
-        className="mt-96 flex w-full flex-col items-center justify-center gap-32"
+        className="mt-96 mb-16 flex w-full flex-col items-center justify-center"
         id="contact"
       >
         <motion.div
@@ -17,9 +17,9 @@ const ContactSection: React.FC<ContactSectionProps> = (
           whileInView={{ y: [30, 0], opacity: 1 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 1 }}
-          className="flex w-2/3 justify-center lg:w-1/2"
+          className="mb-16 flex w-2/3 justify-center lg:w-1/2"
         >
-          <p className="mb-5 w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
+          <p className="w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
             My inbox is always open - so if you want to work together on
             something don&apos;t be afraid to say hi.
           </p>

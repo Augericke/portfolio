@@ -89,7 +89,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
               {navItems.map((item, index) => {
                 return (
                   <Link key={index} href={item.link}>
-                    <a className="text-xl font-light text-white transition-all duration-200 ease-linear hover:font-normal hover:text-primaryDark dark:hover:text-primary lg:text-2xl">
+                    <a className="text-xl font-light text-white transition-all duration-200 ease-linear hover:text-primaryDark dark:hover:text-primary lg:text-2xl">
                       {item.name}
                     </a>
                   </Link>
@@ -116,7 +116,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
                       {navItems.map((item, index) => {
                         return (
                           <Link key={index} href={item.link}>
-                            <a className="text-xl font-light text-white transition-all duration-200 ease-linear hover:font-normal hover:text-primary dark:hover:text-primaryDark">
+                            <a className="text-xl font-light text-white transition-all duration-200 ease-linear hover:text-primary dark:hover:text-primaryDark">
                               <span onClick={() => close()}>{item.name}</span>
                             </a>
                           </Link>

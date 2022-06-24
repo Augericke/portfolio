@@ -41,9 +41,9 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = (
             transition={{ duration: 0.4 }}
           >
             {darkTheme ? (
-              <FaSun size={20} className="text-primaryDark" />
+              <FaMoon size={18} className="text-primaryDark" />
             ) : (
-              <FaMoon size={18} className="text-primary" />
+              <FaSun size={20} className="text-primary" />
             )}
           </motion.i>
         </AnimatePresence>

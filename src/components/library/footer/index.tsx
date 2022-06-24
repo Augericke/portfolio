@@ -5,7 +5,7 @@ type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   return (
-    <div className="mt-28 flex h-44 w-full items-center justify-center ">
+    <div className="flex h-44 w-full items-center justify-center ">
       <div className="flex items-center justify-center gap-5 border-t-2 border-t-primaryDark px-6 dark:border-t-primary">
         <a
           href="https://github.com/Augericke"
