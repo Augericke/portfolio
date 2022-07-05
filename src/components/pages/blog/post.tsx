@@ -26,7 +26,7 @@ const Post: React.FC<PostProps> = ({ meta, children }) => {
           </a>
         </Link>
       </div>
-      <div className="flex min-h-[80vh] justify-center pt-5">
+      <div className="flex min-h-[80vh] justify-center pt-16 md:pt-5">
         <div
           className="flex w-screen flex-col items-center justify-start bg-stone-100
                       md:w-9/12 md:rounded-xl"
