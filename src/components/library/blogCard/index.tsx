@@ -35,7 +35,7 @@ const BlogCard: React.FC<BlogCardProps> = (props: BlogCardProps) => {
               </p>
             </div>
             <div className="mt-4 mb-6 flex w-10/12 flex-col-reverse gap-y-6 lg:flex-col lg:gap-y-2">
-              <div className="mb-3 flex flex-wrap gap-5">
+              <div className="mb-0 flex flex-wrap gap-3 md:mb-3 md:gap-5">
                 {tags.map((tag, key) => {
                   return (
                     <p
