@@ -30,9 +30,9 @@ const BlogPage: NextPage<any> = ({ blogs }) => {
   return (
     <>
       <Head>
-        <title>Blog</title>
+        <title>Blog | All Posts</title>
         <meta
-          name="Blog | All Posts"
+          name="description"
           content="I write about what I am learning and the things I have made."
         />
         <link rel="icon" href="/favicon.ico" />

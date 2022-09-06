@@ -9,8 +9,11 @@ const LandingPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Home</title>
-        <meta name="home" content="portfolio site for augericke" />
+        <title>Austin Gericke</title>
+        <meta
+          name="description"
+          content="I'm Austin, a data engineer turned web developer."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <IntroSection />
