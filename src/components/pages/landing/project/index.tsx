@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import ProjectCard from '../../../library/projectCard';
-import { motion } from 'framer-motion';
-import BikeCrashImage from '../../../../assets/images/project/BikeCrashProject.png';
+import ShowOnScroll from '../../../library/animations/showOnScroll';
+import BikeCrashImage from '../../../../assets/images/project/BikeCrashProject.jpg';
 
 type ProjectSectionProps = {};
 
@@ -42,17 +42,11 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
         className="mt-96 flex w-full flex-col items-center justify-center gap-32"
         id="work"
       >
-        <motion.div
-          initial={{ y: 0, opacity: 0 }}
-          whileInView={{ y: [30, 0], opacity: 1 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 1 }}
-          className="flex w-2/3 justify-center lg:w-1/2"
-        >
+        <ShowOnScroll customClass="flex w-2/3 justify-center lg:w-1/2">
           <p className="mb-5 w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
             Here are some of the projects i&apos;ve been working on recently.
           </p>
-        </motion.div>
+        </ShowOnScroll>
         {cardList.map((card, key) => {
           const displayRight = (key + 1) % 2 === 0;
           return renderCard(
@@ -77,15 +71,8 @@ export default ProjectSection;
 
 function renderCard(projectCard: ReactNode, key?: any) {
   return (
-    <motion.div
-      key={key}
-      className="w-full"
-      initial={{ y: 0, opacity: 0 }}
-      whileInView={{ y: [50, 0], opacity: 1 }}
-      viewport={{ once: true, margin: '-150px' }}
-      transition={{ duration: 1 }}
-    >
-      {projectCard}
-    </motion.div>
+    <ShowOnScroll key={key} customClass="w-full">
+      <>{projectCard}</>
+    </ShowOnScroll>
   );
 }

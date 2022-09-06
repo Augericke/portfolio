@@ -42,27 +42,15 @@ const Post: React.FC<PostProps> = ({ meta, children }) => {
               <AnimatedTitle
                 text={meta.title}
                 customClassName="lg leading-[0px] mt-6 md:mt-0 mr-3 text-4xl font-bold text-primary dark:text-primaryDark md:text-5xl"
+                initialDelay={2}
                 wordDelay={0.1}
-                customAnimation={{
-                  hidden: {
-                    opacity: 0,
-                    y: '0.25em',
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: '0em',
-                    transition: {
-                      duration: 1.5,
-                      ease: 'backInOut',
-                    },
-                  },
-                }}
+                duration={1}
               />
               <motion.div
                 initial={{ y: 0, opacity: 0 }}
                 whileInView={{ y: [30, 0], opacity: 1 }}
                 viewport={{ once: true, margin: '-50px' }}
-                transition={{ delay: 1.5, duration: 1.5, ease: 'backInOut' }}
+                transition={{ delay: 0.5, duration: 1.5, ease: 'backInOut' }}
                 className="mt-3 flex flex-wrap gap-5"
               >
                 {meta.tags.map((tag: string, key: number) => {

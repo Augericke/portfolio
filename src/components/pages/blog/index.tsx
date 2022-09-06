@@ -16,20 +16,9 @@ const Blog: React.FC<BlogProps> = ({ blogs }) => {
               text={'All Posts'}
               customClassName="leading-[0px] mr-3  text-4xl font-bold text-white lg:text-5xl"
               customHeaderClass={'text-left'}
-              customAnimation={{
-                hidden: {
-                  opacity: 0,
-                  y: '0.25em',
-                },
-                visible: {
-                  opacity: 1,
-                  y: '0em',
-                  transition: {
-                    duration: 1.5,
-                    ease: 'backInOut',
-                  },
-                },
-              }}
+              initialDelay={3}
+              wordDelay={0.2}
+              duration={0.5}
             />
           </div>
           {blogs.map((blog: any, key: any) => {

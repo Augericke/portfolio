@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import ShowOnScroll from '../../../library/animations/showOnScroll';
 import BlogCard from '../../../library/blogCard';
 
 type BlogSectionProps = {};
@@ -38,18 +38,12 @@ const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
         className="mt-96 flex w-full flex-col items-center justify-center gap-16"
         id="blog"
       >
-        <motion.div
-          initial={{ y: 0, opacity: 0 }}
-          whileInView={{ y: [30, 0], opacity: 1 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 1 }}
-          className="flex w-2/3 justify-center lg:w-1/2"
-        >
+        <ShowOnScroll customClass="flex w-2/3 justify-center lg:w-1/2">
           <p className="mb-5 w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
             Sometimes I write about what I am learning or the things I have
             made.
           </p>
-        </motion.div>
+        </ShowOnScroll>
         {blogList.map((blog, key) => {
           return (
             <BlogCard
@@ -62,13 +56,7 @@ const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
             />
           );
         })}
-        <motion.div
-          initial={{ y: 0, opacity: 0 }}
-          whileInView={{ y: [30, 0], opacity: 1 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 1 }}
-          className="flex w-2/3 justify-center lg:w-1/2"
-        >
+        <ShowOnScroll customClass="flex w-2/3 justify-center lg:w-1/2">
           <Link href="/blog/">
             <a>
               <p className="mb-5 -mt-6 w-fit rounded-3xl bg-primaryDark px-8 py-2 text-center text-2xl font-light text-white shadow-lg dark:bg-primary lg:text-3xl">
@@ -76,7 +64,7 @@ const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
               </p>
             </a>
           </Link>
-        </motion.div>
+        </ShowOnScroll>
       </div>
     </>
   );

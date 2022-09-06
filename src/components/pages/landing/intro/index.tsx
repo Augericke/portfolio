@@ -29,9 +29,8 @@ const IntroSection: React.FC<IntroSectionProps> = (
       opacity: 1,
       y: '0em',
       transition: {
-        duration: 4,
+        duration: 1,
         y: { type: 'spring', stiffness: 100 },
-        ease: [0.2, 0.65, 0.3, 0.9],
       },
     },
   };
@@ -43,11 +42,15 @@ const IntroSection: React.FC<IntroSectionProps> = (
           <AnimatedTitle
             text="Hello, my name is"
             customClassName="mb-5 mr-2 font-light text-white text-xl md:mb-6 md:text-2xl lg:mb-7 lg:text-3xl"
+            initialDelay={2}
+            wordDelay={0.1}
+            duration={0.5}
           />
           <AnimatedTitle
             text="Austin Gericke."
             customClassName="text-4xl font-extrabold mr-5 text-primaryDark dark:text-primary sm:text-6xl md:text-7xl lg:text-8xl"
-            initialDelay={7}
+            initialDelay={8}
+            wordDelay={0.1}
             customAnimation={customTitleAnimation}
           />
         </div>

@@ -68,7 +68,8 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                 customHeaderClass={`${
                   direction === 'left' ? 'md:text-left' : 'md:text-right'
                 } text-center`}
-                initialDelay={2}
+                // initialDelay={1}
+                wordDelay={0.1}
                 customAnimation={{
                   hidden: {
                     opacity: 0,

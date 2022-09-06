@@ -10,6 +10,7 @@ type AnimatedTitleProps = {
   wordDelay?: number;
   stagger?: number;
   buffer?: string;
+  duration?: number;
 };
 
 const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
@@ -21,6 +22,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   wordDelay = 0.25,
   stagger = 0.05,
   buffer = '0px',
+  duration = 2,
 }) => {
   const wordAnimation = {
     hidden: {},
@@ -36,7 +38,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
       opacity: 1,
       y: '0em',
       transition: {
-        duration: 2,
+        duration,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
     },
