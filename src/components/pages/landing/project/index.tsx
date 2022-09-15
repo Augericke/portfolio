@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import ProjectCard from '../../../library/projectCard';
 import ShowOnScroll from '../../../library/animations/showOnScroll';
 import BikeCrashImage from '../../../../assets/images/project/BikeCrashProject.jpg';
+import Cofffee from '../../../../assets/images/project/cofffeeShop.jpg';
 
 type ProjectSectionProps = {};
 
@@ -9,6 +10,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
   props: ProjectSectionProps
 ) => {
   const cardList = [
+    {
+      projectTitle: 'Cofffee Shop',
+      projectAbout:
+        // eslint-disable-next-line quotes
+        "A weekend project to learn more about Next.js and explore how OpenAi's image and text generation tools could be used to inform the design process.",
+      projectSkills: ['Typescript', 'Next.js', 'SCSS'],
+      githubUrl: 'https://github.com/Augericke/cofffee-shop',
+      projectUrl: 'https://cofffee-shop.vercel.app/',
+      projectImage: Cofffee,
+    },
     {
       projectTitle: 'NYC Bike Crash Report',
       projectAbout:
@@ -18,22 +29,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
       projectUrl: 'https://agericke.shinyapps.io/NYC-Bike-Crash-Report-v2/',
       projectImage: BikeCrashImage,
     },
-    {
-      projectTitle: 'Place Holder Project',
-      projectAbout:
-        'I worked on this thing for these people using these tools. You can use this thing I used to do this other thing by going to this page.',
-      projectSkills: ['React', 'Typescript', 'NextJs', 'MongoDb'],
-      githubUrl: 'https://github.com/Augericke',
-      projectUrl: '#',
-    },
-    {
-      projectTitle: 'Place Holder Project',
-      projectAbout:
-        'I worked on this thing for these people using these tools. You can use this thing I used to do this other thing by going to this page.',
-      projectSkills: ['React', 'Typescript', 'NextJs', 'MongoDb'],
-      githubUrl: 'https://github.com/Augericke',
-      projectUrl: '#',
-    },
+    // {
+    //   projectTitle: 'Place Holder Project',
+    //   projectAbout:
+    //     'I worked on this thing for these people using these tools. You can use this thing I used to do this other thing by going to this page.',
+    //   projectSkills: ['React', 'Typescript', 'NextJs', 'MongoDb'],
+    //   githubUrl: 'https://github.com/Augericke',
+    //   projectUrl: '#',
+    // },
   ];
 
   return (

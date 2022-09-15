@@ -57,7 +57,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
 
   return (
     <Popover
-      className={`fixed z-50 flex h-[70px] w-screen items-center justify-center bg-primary dark:bg-primaryDark
+      className={`fixed z-50 flex h-[70px] w-screen items-center justify-center bg-primary dark:bg-primaryDark 
          ${scrollAtTop ? '' : 'shadow-lg'}
          ${showNav ? 'top-0' : 'top-[-60px] h-[0px] opacity-0'}
          transition-{top} duration-300 ease-in-out

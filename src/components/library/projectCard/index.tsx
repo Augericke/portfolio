@@ -165,12 +165,14 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
           alt="place holder image"
           layout="fill"
           placeholder="blur"
+          objectFit="cover"
+          priority={true}
         />
         <div
           className="absolute flex h-full w-full items-center justify-center gap-8
-                    text-xs text-white dark:bg-primary/40 md:z-10 md:bg-transparent md:opacity-0 md:transition-all
-                    md:duration-500 md:ease-in-out md:hover:bg-primaryDark/50 md:hover:text-4xl
-                    md:hover:opacity-100 md:hover:dark:bg-primary/50 lg:hover:text-6xl"
+                  text-xs text-white  md:z-10 md:bg-transparent md:opacity-0 md:transition-all
+                  md:duration-500 md:ease-in-out md:hover:bg-primaryDark/50 md:hover:text-4xl
+                  md:hover:opacity-100 md:hover:dark:bg-primary/50 lg:hover:text-6xl"
         >
           {githubUrl && (
             <a href={githubUrl} target="_blank" rel="noreferrer">
