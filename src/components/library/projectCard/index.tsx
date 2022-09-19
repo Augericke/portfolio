@@ -3,7 +3,6 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import type { StaticImageData } from 'next/image';
 import PlaceHolderImage from '../../../assets/images/project/placeHolder.jpg';
-import AnimatedTitle from '../animations/animatedTitle';
 import { motion } from 'framer-motion';
 
 type ProjectCardProps = {
@@ -60,33 +59,17 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
         <div className="rounded-20px flex w-full justify-center md:w-7/12 lg:h-96">
           <div className="flex w-10/12 flex-col justify-evenly">
             <span className="mt-8 mb-5">
-              <AnimatedTitle
-                text={projectTitle}
-                customClassName={`leading-[0px] text-2xl font-bold text-white lg:text-4xl ${
-                  direction === 'left' ? 'mr-3' : 'mr-3 md:ml-3'
-                }`}
-                customHeaderClass={`${
-                  direction === 'left' ? 'md:text-left' : 'md:text-right'
-                } text-center`}
-                // initialDelay={1}
-                wordDelay={0.1}
-                customAnimation={{
-                  hidden: {
-                    opacity: 0,
-                  },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      duration: 2,
-                      ease: [0.2, 0.65, 0.3, 0.9],
-                    },
-                  },
-                }}
-              />
+              <h2
+                className={
+                  'text-2xl font-bold leading-[0px] text-white lg:text-4xl'
+                }
+              >
+                {projectTitle}
+              </h2>
             </span>
             <motion.span
-              className={`text-base text-white lg:text-lg
-                          ${direction === 'left' ? '' : 'md:text-right'}`}
+              className={`text-base text-white 
+                         `}
               variants={bodyTextAnimation}
               initial="hidden"
               whileInView="visible"
