@@ -47,7 +47,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
       >
         <ShowOnScroll customClass="flex w-2/3 justify-center lg:w-1/2">
           <p className="mb-5 w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
-            Here are some of the projects i&apos;ve been working on recently.
+            Here are a few of the projects i&apos;ve been working on recently.
           </p>
         </ShowOnScroll>
         {cardList.map((card, key) => {

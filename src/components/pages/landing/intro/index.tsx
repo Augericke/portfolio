@@ -3,6 +3,7 @@ import AnimatedTitle from '../../../library/animations/animatedTitle';
 import { FaChevronDown } from 'react-icons/fa';
 import InfoBox from '../../../library/animations/infoBox';
 import { motion } from 'framer-motion';
+import ShowOnScroll from '../../../library/animations/showOnScroll';
 
 type IntroSectionProps = {};
 
@@ -69,7 +70,17 @@ const IntroSection: React.FC<IntroSectionProps> = (
                       duration-300 ease-out dark:text-primary`}
         />
       </motion.div>
-      <div className="flex items-center justify-center" id="about">
+      <div
+        className="mt-96 mb-24 flex w-full flex-col items-center justify-center gap-32"
+        id="about"
+      >
+        <ShowOnScroll customClass="flex w-2/3 justify-center lg:w-1/2">
+          <p className="mb-5 w-full text-justify text-2xl font-light text-white md:mb-6 lg:mb-7 lg:w-2/3 lg:text-3xl">
+            I&apos;ve had the pleasure to work at some pretty great places.
+          </p>
+        </ShowOnScroll>
+      </div>
+      <div className="flex items-center justify-center">
         <InfoBox />
       </div>
     </>

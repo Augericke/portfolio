@@ -44,8 +44,8 @@ const InfoBox: React.FC<InfoBoxProps> = ({ customClass }) => {
   const selectedJob = infoSections[selected];
 
   return (
-    <div className="flex w-8/12 items-start justify-between rounded-[20px] bg-primaryDark p-6 dark:bg-primary">
-      <div className="flex w-2/12 flex-col items-start">
+    <div className="flex w-10/12 flex-col items-center justify-between overflow-scroll rounded-[20px] bg-primaryDark p-8 dark:bg-primary lg:w-8/12 lg:flex-row lg:items-start lg:p-24">
+      <div className="mb-5 flex w-full justify-center lg:mb-0 lg:w-3/12 lg:flex-col lg:items-start">
         {infoSections.map((item, index) => (
           <InfoItem
             key={index}
@@ -56,21 +56,28 @@ const InfoBox: React.FC<InfoBoxProps> = ({ customClass }) => {
           />
         ))}
       </div>
-      <ShowOnScroll customClass="flex w-9/12 flex-col items-start text-white">
+      <ShowOnScroll customClass="flex w-full md:w-8/12 flex-col items-center lg:items-start text-white ">
         <>
-          <div className="flex flex-col items-start">
-            <span className="font-extrabold lg:text-2xl">
+          <div className="flex flex-col items-start md:items-center lg:items-start">
+            <span className="text-xl font-extrabold transition-all duration-500 md:text-2xl lg:text-3xl">
               {selectedJob.jobTitle}{' '}
-              <span className="font-semibold text-primary dark:font-bold dark:text-primaryDark">
+              <a
+                className="font-semibold text-primary dark:font-bold dark:text-primaryDark"
+                href={selectedJob.companyUrl}
+              >
                 @ {selectedJob.company}
-              </span>
+              </a>
             </span>
-            <span className="text-base font-thin">{selectedJob.duration}</span>
+            <span className="text-xs font-thin md:text-base">
+              {selectedJob.duration}
+            </span>
           </div>
 
-          <ul className="mt-5 flex w-10/12 list-disc  flex-col gap-4  pl-6  marker:text-3xl marker:text-primary dark:marker:text-primaryDark">
+          <ul className="ml-0 mt-5 flex w-full list-disc flex-col gap-4 pl-0 text-xs marker:text-3xl marker:text-primary dark:marker:text-primaryDark md:w-10/12 lg:text-base">
             {selectedJob.bullets.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li className="ml-1" key={index}>
+                {item}
+              </li>
             ))}
           </ul>
         </>
@@ -94,15 +101,17 @@ const InfoItem: React.FC<InfoItemProps> = (props: InfoItemProps) => {
   return (
     <>
       <button
-        className={`relative flex cursor-pointer justify-start p-4 text-white ${
+        className={`relative flex cursor-pointer items-center justify-start p-4 text-white ${
           isSelected ? '' : 'font-weight opacity-50'
         }`}
         onClick={onClick}
       >
-        <span className="text-left font-bold lg:text-lg">{section}</span>
+        <span className="md:tex-base text-left text-xs font-bold lg:text-lg">
+          {section}
+        </span>
         {isSelected && (
           <motion.div
-            className="absolute -left-3 top-0 h-full w-1 rounded-lg bg-primary dark:bg-primaryDark"
+            className="absolute left-0 bottom-2 h-1 w-full rounded-lg bg-primary dark:bg-primaryDark lg:-left-3 lg:top-0 lg:h-full lg:w-1"
             layoutId={layoutId}
           />
         )}
