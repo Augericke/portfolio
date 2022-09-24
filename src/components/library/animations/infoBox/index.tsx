@@ -44,7 +44,7 @@ const InfoBox: React.FC<InfoBoxProps> = ({ customClass }) => {
   const selectedJob = infoSections[selected];
 
   return (
-    <div className="flex w-10/12 flex-col items-center justify-between overflow-scroll rounded-[20px] bg-primaryDark p-8 dark:bg-primary lg:w-8/12 lg:flex-row lg:items-start lg:p-24">
+    <div className="s flex w-10/12 flex-col items-center justify-between rounded-[20px] bg-primaryDark p-8 dark:bg-primary lg:w-8/12 lg:flex-row lg:items-start lg:p-24">
       <div className="mb-5 flex w-full justify-center lg:mb-0 lg:w-3/12 lg:flex-col lg:items-start">
         {infoSections.map((item, index) => (
           <InfoItem
