@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
                      }`}
     >
       <div
-        className={`relative z-10 -mt-56 flex w-3/4 overflow-hidden rounded-[20px]
+        className={`relative z-10 -mt-56 flex w-5/6 overflow-hidden rounded-[20px]
                    bg-primaryDark shadow-lg dark:bg-primary md:z-0 md:mt-0
                    md:min-h-[20rem] md:w-2/3 lg:min-h-[24rem] xl:w-[850px]
                    ${direction === 'left' ? '' : 'flex justify-end'}
@@ -59,11 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
         <div className="rounded-20px flex w-full justify-center md:w-7/12 lg:h-96">
           <div className="flex w-10/12 flex-col justify-evenly">
             <span className="mt-8 mb-5">
-              <h2
-                className={
-                  'text-2xl font-bold leading-[0px] text-white lg:text-4xl'
-                }
-              >
+              <h2 className={'text-2xl font-bold  text-white lg:text-4xl'}>
                 {projectTitle}
               </h2>
             </span>
