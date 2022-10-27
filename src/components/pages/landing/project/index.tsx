@@ -3,6 +3,7 @@ import ProjectCard from '../../../library/projectCard';
 import ShowOnScroll from '../../../library/animations/showOnScroll';
 import BikeCrashImage from '../../../../assets/images/project/BikeCrashProject.jpg';
 import Cofffee from '../../../../assets/images/project/cofffeeShop.jpg';
+import Dabitts from '../../../../assets/images/project/dabitts.jpg';
 
 type ProjectSectionProps = {};
 
@@ -10,6 +11,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
   props: ProjectSectionProps
 ) => {
   const cardList = [
+    {
+      projectTitle: 'dabitts',
+      projectAbout:
+        // eslint-disable-next-line quotes
+        'A low friction habit tracking app that also provides analytics on where and how you have been spending the majority of your time.',
+      projectSkills: ['Next.js', 'Node', 'Express', 'Postgres', 'Typescript'],
+      githubUrl: 'https://github.com/Augericke/dabitt-backend',
+      projectUrl: 'https://www.dabitts.com/',
+      projectImage: Dabitts,
+    },
     {
       projectTitle: 'Cofffee Shop',
       projectAbout:
