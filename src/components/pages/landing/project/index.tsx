@@ -4,6 +4,7 @@ import ShowOnScroll from '../../../library/animations/showOnScroll';
 import BikeCrashImage from '../../../../assets/images/project/BikeCrashProject.jpg';
 import Cofffee from '../../../../assets/images/project/cofffeeShop.jpg';
 import Dabitts from '../../../../assets/images/project/dabitts.jpg';
+import Topple from '../../../../assets/images/project/topple.jpg';
 
 type ProjectSectionProps = {};
 
@@ -20,6 +21,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = (
       githubUrl: 'https://github.com/Augericke/dabitt-backend',
       projectUrl: 'https://www.dabitts.com/',
       projectImage: Dabitts,
+    },
+    {
+      projectTitle: 'Topple Debacle',
+      projectAbout:
+        // eslint-disable-next-line quotes
+        'A daily word puzzle where you need to clear the grid by spelling connected words.',
+      projectSkills: ['Next.js', 'Typescript', 'Framer Motion', 'Trie'],
+      githubUrl: 'https://github.com/Augericke/topple-debacle',
+      projectUrl: 'https://topple-debacle.vercel.app/',
+      projectImage: Topple,
     },
     {
       projectTitle: 'Cofffee Shop',
