@@ -8,26 +8,10 @@ type BlogSectionProps = {};
 const BlogSection: React.FC<BlogSectionProps> = (props: BlogSectionProps) => {
   const blogList = [
     {
-      title: 'Oh look a blog',
+      title: 'Trie Again',
       publishedAt: 'May 22, 2022',
       tags: ['Typescript', 'Framer Motion', 'Tailwindcss'],
       slug: '/blog/oh-look-a-blog',
-      abstract:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec sodales dolor, sit amet semper tellus. Duis interdum elit sit amet varius vehicula. Aliquam nec ex nibh. Duis bibendum vel sapien eget vulputate.',
-    },
-    {
-      title: 'Oh look another blog',
-      publishedAt: 'May 22, 2022',
-      tags: ['Typescript', 'Tailwindcss'],
-      slug: '/blog/oh-look-another-blog',
-      abstract:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec sodales dolor, sit amet semper tellus. Duis interdum elit sit amet varius vehicula. Aliquam nec ex nibh. Duis bibendum vel sapien eget vulputate.',
-    },
-    {
-      title: 'and another one',
-      publishedAt: 'May 22, 2022',
-      tags: ['React'],
-      slug: '/blog/oh-look-another-blog',
       abstract:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec sodales dolor, sit amet semper tellus. Duis interdum elit sit amet varius vehicula. Aliquam nec ex nibh. Duis bibendum vel sapien eget vulputate.',
     },

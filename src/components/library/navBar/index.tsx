@@ -19,10 +19,10 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       name: 'work',
       link: '/#work',
     },
-    {
-      name: 'blog',
-      link: '/blog',
-    },
+    // {
+    //   name: 'blog',
+    //   link: '/blog',
+    // },
     {
       name: 'contact',
       link: '/#contact',
