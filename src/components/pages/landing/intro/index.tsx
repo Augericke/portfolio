@@ -1,9 +1,9 @@
 import React from 'react';
 import AnimatedTitle from '../../../library/animations/animatedTitle';
 import { FaChevronDown } from 'react-icons/fa';
-import InfoBox from '../../../library/animations/infoBox';
+// import InfoBox from '../../../library/animations/infoBox';
 import { motion } from 'framer-motion';
-import ShowOnScroll from '../../../library/animations/showOnScroll';
+// import ShowOnScroll from '../../../library/animations/showOnScroll';
 
 type IntroSectionProps = {};
 
@@ -70,7 +70,7 @@ const IntroSection: React.FC<IntroSectionProps> = (
                       duration-300 ease-out dark:text-primary`}
         />
       </motion.div>
-      <div
+      {/* <div
         className="mt-96 mb-24 flex w-full flex-col items-center justify-center gap-32"
         id="about"
       >
@@ -79,10 +79,10 @@ const IntroSection: React.FC<IntroSectionProps> = (
             I&apos;ve had the pleasure to work at some pretty great places.
           </p>
         </ShowOnScroll>
-      </div>
-      <div className="flex items-center justify-center">
+      </div> */}
+      {/* <div className="flex items-center justify-center">
         <InfoBox />
-      </div>
+      </div> */}
     </>
   );
 };
