@@ -98,7 +98,7 @@
     padding: 10px;
 
     @include sm {
-      background-color: rgba(var(--opposite-background-color-rgb), 0.95);
+      background-color: rgba(var(--opposite-background-color-rgb), 0.75);
       box-shadow: var(--shadow-elevation-high);
       padding: 30px;
       width: 500px;
@@ -173,11 +173,15 @@
     }
 
     & li {
-      background-color: rgba(var(--background-color-rgb), 0.5);
+      background-color: var(--opposite-background-color);
       padding: 5px 8px 5px 8px;
       border-radius: 5px;
       font-size: 12px;
       transition: font-size 400ms;
+
+      @include sm {
+        background-color: rgba(var(--background-color-rgb), 0.5);
+      }
 
       @include lg {
         margin-top: 10px;
