@@ -1,0 +1,16 @@
+$background-color: #358dde;
+$background-color-rgb: 53, 141, 222;
+$opposite-background-color: #1d2433;
+$opposite-background-color-rgb: 29, 36, 51;
+$foreground-color: #3372ad;
+$subtle-color: #cdcfdb;
+$text-color: white;
+
+:export {
+  background-color: $background-color;
+  background-color-rgb: $background-color-rgb;
+  opposite-background-color: $opposite-background-color;
+  opposite-background-color-rgb: $opposite-background-color-rgb;
+  foreground-color: $foreground-color;
+  subtle-color: $subtle-color;
+}

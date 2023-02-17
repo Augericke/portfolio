@@ -6,10 +6,10 @@ module.exports = {
       use: [
         options.defaultLoaders.babel,
         {
-          loader: '@mdx-js/loader',
+          loader: "@mdx-js/loader",
           options: {
-            providerImportSource: '@mdx-js/react',
-            remarkPlugins: [require('remark-prism')],
+            providerImportSource: "@mdx-js/react",
+            remarkPlugins: [require("remark-prism")],
             rehypePlugins: [],
           },
         },
@@ -18,7 +18,7 @@ module.exports = {
 
     return config;
   },
-  webpack5: true,
+  // webpack5: true,
   reactStrictMode: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 };

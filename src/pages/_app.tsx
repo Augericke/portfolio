@@ -1,21 +1,15 @@
-import type { AppProps } from 'next/app';
-import { MDXProvider } from '@mdx-js/react';
-import Layout from '../components/layout';
-import MDXComponents from '../components/pages/blog/MDXComponents';
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "next-themes";
 
-import '../styles/globals.css';
-import '../styles/prism-theme.css';
+import "@/styles/globals.scss";
+import "@/styles/prisma-theme.scss";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Layout>
-        <MDXProvider components={MDXComponents}>
-          <Component {...pageProps} />
-        </MDXProvider>
-      </Layout>
-    </>
+    <ThemeProvider themes={["light", "dark"]}>
+      <Component {...pageProps} />
+      <Analytics />
+    </ThemeProvider>
   );
 }
-
-export default MyApp;

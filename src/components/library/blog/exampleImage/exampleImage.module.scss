@@ -1,0 +1,37 @@
+@import "~@styles/breakpoints.module.scss";
+
+.exampleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 20px;
+
+  & span {
+    color: var(--text-color);
+    opacity: 0.3;
+  }
+}
+
+.projectImageContainer {
+  width: 90vw;
+  height: 65vw;
+  background-color: black;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevation-high);
+
+  @include md {
+    width: 600px;
+    height: 400px;
+  }
+
+  @include lg {
+    width: 750px;
+    height: 500px;
+  }
+}

@@ -1,0 +1,40 @@
+@import "~@styles/breakpoints.module.scss";
+.toggleBar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50px;
+  background-color: var(--background-color);
+  padding: 4px;
+  width: 56px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 20;
+
+  @include md {
+    background-color: var(--opposite-background-color);
+  }
+
+  &On {
+    @extend .toggleBar;
+    justify-content: flex-start;
+  }
+
+  &Off {
+    @extend .toggleBar;
+    justify-content: flex-end;
+  }
+}
+
+.toggleSwitch {
+  background-color: white;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+}
+
+.toggleIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

@@ -1,0 +1,136 @@
+@import "~@styles/breakpoints.module.scss";
+
+.headerSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .headerCardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+    flex-direction: column;
+
+    @include md {
+      width: 100%;
+      padding: 50px;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    @include lg {
+      max-width: 1400px;
+      width: 90%;
+    }
+
+    .imageContainer {
+      width: 312px;
+      height: 208px;
+      background-color: black;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--shadow-elevation-high);
+
+      @include sm {
+        width: 450px;
+        height: 300px;
+      }
+
+      @include md {
+        width: 600px;
+        height: 400px;
+      }
+
+      @include lg {
+        width: 750px;
+        height: 500px;
+      }
+    }
+
+    .descriptionContainer {
+      width: 100%;
+      max-width: 625px;
+      position: relative;
+      border-radius: 3px;
+      background-color: rgba(var(--opposite-background-color-rgb), 0.95);
+      box-shadow: var(--shadow-elevation-high);
+      padding: 20px;
+      padding-top: 40px;
+      top: 40%;
+
+      @include md {
+        position: absolute;
+        right: 10vw;
+        top: auto;
+        width: 60%;
+        padding: 25px 50px 25px 50px;
+      }
+
+      .title {
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        font-size: 28px;
+        transition: font-size 400ms;
+        padding-bottom: 10px;
+
+        @include md {
+          font-size: 31px;
+        }
+
+        @include lg {
+          font-size: 38px;
+        }
+      }
+
+      .linkContainer {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        font-size: 21px;
+        margin-top: 40px;
+
+        & a:hover {
+          color: var(--background-color);
+        }
+      }
+
+      & p {
+        font-weight: 400;
+        margin-top: 25px;
+        font-size: 14px;
+        transition: font-size 400ms;
+
+        @include lg {
+          font-size: 16px;
+        }
+      }
+
+      & ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        & li {
+          background-color: rgba(var(--background-color-rgb), 0.5);
+
+          padding: 5px 8px 5px 8px;
+          border-radius: 5px;
+          font-size: 12px;
+          transition: font-size 400ms;
+
+          @include lg {
+            margin-top: 10px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

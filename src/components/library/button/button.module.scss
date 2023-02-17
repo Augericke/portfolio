@@ -1,0 +1,20 @@
+.primaryButton {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.inversePrimaryButton {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}

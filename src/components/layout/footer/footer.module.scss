@@ -1,0 +1,37 @@
+@import "~@styles/breakpoints.module.scss";
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 150px;
+
+  .iconsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-top: 2px solid var(--opposite-background-color);
+    padding: 16px 26px 16px 26px;
+
+    @include lg {
+      padding: 16px 36px 16px 36px;
+    }
+
+    .icon {
+      margin-top: 12px;
+      font-size: 26px;
+      color: white;
+      transition: font-size 400ms, color 800ms;
+
+      @include lg {
+        font-size: 31px;
+      }
+
+      &:hover {
+        color: var(--opposite-background-color);
+      }
+    }
+  }
+}

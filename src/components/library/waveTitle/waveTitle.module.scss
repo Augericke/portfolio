@@ -1,0 +1,13 @@
+.wordContainer {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.4em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.characterContainer {
+  display: inline-block;
+}

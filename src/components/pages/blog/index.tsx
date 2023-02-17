@@ -1,42 +1,47 @@
-import React from 'react';
-import BlogCard from '../../library/blogCard';
-import AnimatedTitle from '../../library/animations/animatedTitle';
+import { PostMeta } from "@/types/post";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import RevealOnScroll from "@/components/library/revealOnScroll";
 
-type BlogProps = {
-  blogs: any;
+import styles from "./blog.module.scss";
+
+type BlogsViewProps = {
+  posts: PostMeta[];
 };
 
-const Blog: React.FC<BlogProps> = ({ blogs }) => {
+const BlogsView: React.FC<BlogsViewProps> = ({ posts }) => {
   return (
-    <>
-      <div className="flex min-h-screen justify-center">
-        <div className="mt-24 flex w-10/12 flex-col items-center gap-y-4">
-          <div className="">
-            <AnimatedTitle
-              text={'All Posts'}
-              customClassName="leading-[0px] mr-3  text-4xl font-bold text-white lg:text-5xl"
-              customHeaderClass={'text-left'}
-              initialDelay={3}
-              wordDelay={0.2}
-              duration={0.5}
-            />
-          </div>
-          {blogs.map((blog: any, key: any) => {
-            return (
-              <BlogCard
-                title={blog.title}
-                abstract={blog.abstract}
-                publishedAt={blog.publishedAt}
-                tags={blog.tags}
-                slug={blog.slug}
-                key={key}
-              />
-            );
-          })}
-        </div>
+    <div className={styles.pageContainer}>
+      <div className={styles.postsContainer}>
+        {posts.map((post) => {
+          const { slug, title, abstract, tags, headerImage } = { ...post };
+          return (
+            <Link key={slug} className={styles.post} href={slug}>
+              <div className={styles.infoContainer}>
+                <h2>{title}</h2>
+                <div className={styles.tagsContainer}>
+                  {tags.map((tag, index) => (
+                    <span key={index}>{tag}</span>
+                  ))}
+                </div>
+                <p>{abstract}</p>
+              </div>
+              <RevealOnScroll customClass={styles.imageContainer}>
+                <Image
+                  src={headerImage}
+                  alt={`Blog title image for the article: ${title}`}
+                  placeholder="blur"
+                  fill
+                  priority={true}
+                />
+              </RevealOnScroll>
+            </Link>
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 };
 
-export default Blog;
+export default BlogsView;

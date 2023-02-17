@@ -1,0 +1,29 @@
+.logoContainer {
+  transform: rotate(360deg);
+  transition: all 1s;
+
+  &Dark {
+    @extend .logoContainer;
+    transform: rotate(180deg);
+  }
+}
+
+.austin {
+  fill: var(--opposite-background-color);
+  transition: all 1s;
+
+  &Dark {
+    @extend .austin;
+    fill: white;
+  }
+}
+
+.gericke {
+  fill: white;
+  transition: all 1s;
+
+  &Dark {
+    @extend .austin;
+    fill: var(--opposite-background-color);
+  }
+}
