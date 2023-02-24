@@ -71,6 +71,7 @@
         font-weight: 700;
         font-size: 31px;
         transition: font-size 400ms;
+        margin-top: 0;
 
         @include md {
           margin-bottom: 0px;
@@ -144,4 +145,9 @@
       font-size: 14px;
     }
   }
+}
+
+.dateText {
+  margin-top: 0;
+  opacity: 0.3;
 }

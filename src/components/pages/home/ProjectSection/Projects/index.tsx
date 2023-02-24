@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 import Cofffee from "../../../../../../public/assets/cofffeeProjectImage.jpg";
 import Topple from "../../../../../../public/assets/toppleProjectImage.png";
 import Dabitts from "../../../../../../public/assets/dabittsProjectImage.png";
+import Lightbulb from "../../../../../../public/assets/lightbulbProjectImage.png";
 
 export type ProjectDetails = {
   title: string;
@@ -19,10 +20,19 @@ const projects: ProjectDetails[] = [
     image: Dabitts,
     description:
       "A low friction habit tracking app with analytics on where and how you have been spending the majority of your time.",
-    skills: ["Typescript", "Next.js", "Node", "Express", "Postgres"],
+    skills: ["Typescript", "Next.js", "Node", "Postgres", "Prisma"],
     blogLink: "/blog/dabitts",
     githubLink: "https://github.com/Augericke/dabitt-backend",
     externalLink: "https://www.dabitts.com/",
+  },
+  {
+    title: "lightbulb.fyi",
+    image: Lightbulb,
+    description:
+      "Freelanced as a fullstack software engineer for lightbulb.fyi - a platform connecting knowledge workers and their audience through question and answer prompts.",
+    skills: ["Typescript", "Next.js", "Postgres", "Stripe"],
+    blogLink: "https://www.lightbulb.fyi/",
+    externalLink: "https://www.lightbulb.fyi/",
   },
   {
     title: "Topple Debacle",
