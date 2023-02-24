@@ -9,4 +9,5 @@ export type PostMeta = {
   slug: string;
   githubLink?: string;
   externalLink?: string;
+  publishedDate: string;
 };
