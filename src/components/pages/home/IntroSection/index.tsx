@@ -51,8 +51,8 @@ const IntroSection = () => {
 
           <RevealOnScroll delay={2.2}>
             <p className={styles.aboutText}>
-              I&apos;m a data person and web developer who likes to create
-              things for the internet.
+              I&apos;m an analytics engineer and web developer who likes to make
+              random projects and put them on the internet.
             </p>
           </RevealOnScroll>
         </div>

@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 import Cofffee from "../../../../../../public/assets/cofffeeProjectImage.jpg";
 import Topple from "../../../../../../public/assets/toppleProjectImage.png";
 import Dabitts from "../../../../../../public/assets/dabittsProjectImage.png";
+import Letter from "../../../../../../public/assets/letterProjectImage.png";
 import Lightbulb from "../../../../../../public/assets/lightbulbProjectImage.png";
 
 export type ProjectDetails = {
@@ -15,6 +16,17 @@ export type ProjectDetails = {
 };
 
 const projects: ProjectDetails[] = [
+  {
+    title: "Letter Loco!",
+    image: Letter,
+    description:
+      "If you're a fan of word games you should checkout the crazy hard one I made for IOS while I was learning Swift.",
+    skills: ["SwiftUI", "Core Data", "CloudKit", "Python"],
+    blogLink:
+      "https://apps.apple.com/us/app/letter-loco/id6448546757?platform=iphone",
+    externalLink:
+      "https://apps.apple.com/us/app/letter-loco/id6448546757?platform=iphone",
+  },
   {
     title: "dabitts",
     image: Dabitts,
