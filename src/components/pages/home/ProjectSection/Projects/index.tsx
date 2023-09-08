@@ -37,14 +37,24 @@ const projects: ProjectDetails[] = [
     githubLink: "https://github.com/Augericke/dabitt-backend",
     externalLink: "https://www.dabitts.com/",
   },
+  // {
+  //   title: "lightbulb.fyi",
+  //   image: Lightbulb,
+  //   description:
+  //     "Freelanced as a fullstack software engineer for lightbulb.fyi - a platform connecting knowledge workers and their audience through question and answer prompts.",
+  //   skills: ["Typescript", "Next.js", "Postgres", "Stripe"],
+  //   blogLink: "https://www.lightbulb.fyi/",
+  //   externalLink: "https://www.lightbulb.fyi/",
+  // },
   {
-    title: "lightbulb.fyi",
-    image: Lightbulb,
+    title: "Cofffee Shop",
+    image: Cofffee,
     description:
-      "Freelanced as a fullstack software engineer for lightbulb.fyi - a platform connecting knowledge workers and their audience through question and answer prompts.",
-    skills: ["Typescript", "Next.js", "Postgres", "Stripe"],
-    blogLink: "https://www.lightbulb.fyi/",
-    externalLink: "https://www.lightbulb.fyi/",
+      "A weekend project using OpenAi's image and text generation tools to create a completely prompted coffee shop website.",
+    skills: ["Typescript", "Next.js", "SCSS"],
+    blogLink: "/blog/cofffee-shop",
+    githubLink: "https://github.com/Augericke/cofffee-shop",
+    externalLink: "https://cofffee-shop.vercel.app/",
   },
   {
     title: "Topple Debacle",
@@ -55,16 +65,6 @@ const projects: ProjectDetails[] = [
     blogLink: "/blog/topple-debacle",
     githubLink: "https://github.com/Augericke/topple-debacle",
     externalLink: "https://topple-debacle.vercel.app/",
-  },
-  {
-    title: "Cofffee Shop",
-    image: Cofffee,
-    description:
-      "A weekend project using OpenAi's image and text generation tools to create a completely prompted coffee shop website.",
-    skills: ["Typescript", "Next.js", "SCSS"],
-    blogLink: "/blog/cofffee-shop",
-    githubLink: "https://github.com/Augericke/cofffee-shop",
-    externalLink: "https://cofffee-shop.vercel.app/",
   },
 ];
 
